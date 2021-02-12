@@ -28,8 +28,12 @@
     transition: all 0.5s cubic-bezier(.66,.23,.46,1.26);
   }
 
+  .header__bottom.active {
+    top: 0;
+  }
+
   &.active .header__top {
-    display: none !important;
+    display: none;
   }
 
   &__row {

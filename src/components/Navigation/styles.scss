@@ -46,6 +46,10 @@
     background-color: $main-white-color !important;
     transition: all 0.3s;
 
+    &.active {
+      max-height: 500px;
+    }
+
     &__list {
       flex-direction: column;
       padding: 25px;
@@ -57,10 +61,6 @@
 
       &:not(:last-child) {
         margin-bottom: 15px;
-      }
-
-      &.active {
-        max-height: 500px;
       }
     }
   }

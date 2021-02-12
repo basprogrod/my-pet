@@ -2,12 +2,26 @@ import { Link } from 'react-router-dom'
 import router from '../../constants/router'
 import logo from '../../assets/svg/logo.svg'
 import Navigation from '../Navigation'
-
 import './styles.scss'
+import { useEffect, useState } from 'react'
+import useScrollToggler from '../../hooks/useScrollToggler'
+import { SCROLL_FOR_DISPLAYNG_FIXED_HEADER } from '../../constants/constants'
 
 const Header = () => {
+  const [isOpenNav, setIsOpenNav] = useState(false)
+  const [isFixedHeader, setIsFixedHeader] = useState(true)
+  const isDisplay: boolean = useScrollToggler(SCROLL_FOR_DISPLAYNG_FIXED_HEADER)
+
+  useEffect(() => {
+    setIsFixedHeader(!isFixedHeader)    
+  }, [isDisplay])
+
+  const handleOpneCloseNav = () => {
+    setIsOpenNav((isOpenNav) => !isOpenNav)
+  }
+
   return (
-    <header className="header">
+    <header className={`header ${isDisplay ? 'active' : ''}`}>
         <div className="header__top">
           <div className="container header__container">
             <div className="row header__row top">
@@ -23,7 +37,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="header__bottom">
+        <div className={`header__bottom ${isFixedHeader ? 'active' : ''}`}>
           <div className="container header__container">
             <div className="row header__row bottom">
               
@@ -36,16 +50,16 @@ const Header = () => {
                   </div>
                 </div>
               </Link>
+
               <div className="header__search">
                 <div className="header__search-btn icon-search"></div>
               </div>
               
-              <div className="mob-btn">
+              <div className="mob-btn" onClick={handleOpneCloseNav} >
                 <div className="mob-btn__block">меню</div>
               </div>
               
-              <Navigation />
-              
+              <Navigation isOpen={isOpenNav} />
               
               <a href="cart-page.php" className="header__cart active" data-numb="9">
                 <span className="icon-cart"></span>

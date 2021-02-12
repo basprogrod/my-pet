@@ -1,0 +1,1 @@
+export const SCROLL_FOR_DISPLAYNG_FIXED_HEADER: number = 50
