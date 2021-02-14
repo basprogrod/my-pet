@@ -17,6 +17,9 @@ import CartIcon from './components/Icons/CartIcon';
 import SizeElement from './components/SizeElement';
 import SizesRow from './components/SizesRow';
 import { sizesMock } from './mocks/sizes';
+import ColorElement from './components/ColorElement';
+import ColorRow from './components/ColorRow';
+import { colorsMock } from './mocks/colors';
 
 function App() {
   const [state, setState] = useState('asdf fadf')
@@ -34,6 +37,7 @@ function App() {
         <Route path={router.FEEDBACK} component={FeedbackPage} />
         <Route exact path={router.PAYMENT} component={PaymentPage} />
         <Route exact path="/123">
+          <ColorRow colors={colorsMock}/>
           <SizesRow sizes={sizesMock} />
           <Button
             text="kek"

@@ -4,7 +4,7 @@ import { Sizes, SizesRowProps } from "./ISizesRow"
 import './styles.scss'
 
 const SizesRow = ({
-  sizes,
+  sizes = [],
   selectedSize = 'S',
 }: SizesRowProps) => {
   const [state, setState] = useState({})
@@ -21,6 +21,7 @@ const SizesRow = ({
         {
           sizes.map((item: Sizes) => (
             <SizeElement 
+              key={item.type}
               onClick={handleSelectSize}
               type={item.type} 
               isExist={item.isExist} 
@@ -28,9 +29,6 @@ const SizesRow = ({
             />
           ))
         }
-{/*         
-        <SizeElement onClick={(e) => console.log(e)} type="XS" isSelected />
-        <SizeElement onClick={(e) => console.log(e)} type="XS" isExist /> */}
       </div>
     </div>
   )
