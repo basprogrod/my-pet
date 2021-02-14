@@ -6,6 +6,7 @@ import './styles.scss'
 import { useEffect, useState } from 'react'
 import useScrollToggler from '../../hooks/useScrollToggler'
 import { SCROLL_FOR_DISPLAYNG_FIXED_HEADER } from '../../constants/constants'
+import dictionary from '../../constants/dictionary'
 
 const Header = () => {
   const [isOpenNav, setIsOpenNav] = useState(false)
@@ -56,7 +57,7 @@ const Header = () => {
               </div>
               
               <div className="mob-btn" onClick={handleOpneCloseNav} >
-                <div className="mob-btn__block">меню</div>
+                <div className="mob-btn__block">{dictionary.header.MENU}</div>
               </div>
               
               <Navigation isOpen={isOpenNav} />

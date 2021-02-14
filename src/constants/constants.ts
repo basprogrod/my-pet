@@ -1,1 +1,1 @@
-export const SCROLL_FOR_DISPLAYNG_FIXED_HEADER: number = 50
+export const SCROLL_FOR_DISPLAYNG_FIXED_HEADER: number = 100

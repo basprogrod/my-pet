@@ -8,8 +8,8 @@
   left: -38px;
 
   &__item {
-    &.active a {
-      color: #7d7d7d;
+    a.active {
+      color: $passive-color;
     }
 
     &:hover a {

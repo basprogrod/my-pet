@@ -1,0 +1,11 @@
+@import '../../constants/variables.scss';
+
+.sizes {
+  &__title {
+    margin-bottom: 19px;
+  }
+
+  &__row{
+    display: flex;
+  }
+}
