@@ -26,7 +26,6 @@ const ColorRow = ({
             />
           ))
         }
-        
       </div>
     </div>
   )

@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { Route, Link, Switch } from 'react-router-dom'
 import router from './constants/router';
 import Header from './components/Header';
-import MainPage from './components/MainPage';
-import DeliveryPage from './components/DeliveryPage';
-import ContactPage from './components/ContactPage';
-import FeedbackPage from './components/FeedbackPage';
-import PaymentPage from './components/PaymentPage';
-import CatalogPage from './components/CatalogPage';
+import MainPage from './components/Pages/MainPage';
+import DeliveryPage from './components/Pages/DeliveryPage';
+import ContactPage from './components/Pages/ContactPage';
+import FeedbackPage from './components/Pages/FeedbackPage';
+import PaymentPage from './components/Pages/PaymentPage';
+import CatalogPage from './components/Pages/CatalogPage';
 
 import cartImg from './assets/svg/cart.svg'
 
@@ -20,6 +20,8 @@ import { sizesMock } from './mocks/sizes';
 import ColorElement from './components/ColorElement';
 import ColorRow from './components/ColorRow';
 import { colorsMock } from './mocks/colors';
+import Quantiti from './components/Quantiti';
+import PropductCard from './components/Pages/PropductCard';
 
 function App() {
   const [state, setState] = useState('asdf fadf')
@@ -36,12 +38,14 @@ function App() {
         <Route path={router.CONTACTS} component={ContactPage} />
         <Route path={router.FEEDBACK} component={FeedbackPage} />
         <Route exact path={router.PAYMENT} component={PaymentPage} />
+        <Route exact path={router.PRODUCT_CARD} component={PropductCard} />
         <Route exact path="/123">
+          <Quantiti quantity={2} onSelect={() => {}} onChange={(e) => {}}/>
           <ColorRow colors={colorsMock}/>
           <SizesRow sizes={sizesMock} />
           <Button
             text="kek"
-            onClick={(e) => {}}
+            onClick={(e) => {console.log(e.target)}}
           />
           <Button
             icon={<CartIcon />}

@@ -5,4 +5,5 @@ export default {
   PAYMENT: '/payment',
   FEEDBACK: '/feedback',
   DELIVERY: '/delivery',
+  PRODUCT_CARD: '/productCard',
 }
