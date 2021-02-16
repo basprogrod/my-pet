@@ -22,10 +22,42 @@ import ColorRow from './components/ColorRow';
 import { colorsMock } from './mocks/colors';
 import Quantiti from './components/Quantiti';
 import PropductCard from './components/Pages/PropductCard';
+import { ListFormat } from 'typescript';
+import AdminPage from './components/Pages/AdminPage';
 
 function App() {
   const [state, setState] = useState('asdf fadf')
 
+  const [img, setImg] = useState<any>(undefined)
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault()
+    const fd = new FormData(e.target)
+
+    console.log();
+    const field = fd.entries().next().value
+    const file = field[1]
+    const reader = new FileReader()
+
+    const data = new FormData()
+
+    data.append('image', file)
+
+    fetch('http://localhost:3001/file', {
+      method: 'post',
+      body: data,
+    }).then((r) => r.json()).then((r) => {
+      return fetch(`http://localhost:3001/uploads/${r.fileName}`)
+    }).then((r) => r.blob())
+      .then((r) => {
+        console.log(r)
+        reader.readAsDataURL(r)
+
+        reader.onload = () => {
+          setImg(reader.result)
+        }
+      })  
+  }
 
   return (
     <div className="App">
@@ -73,6 +105,16 @@ function App() {
             onClick={(e) => {}}
           />
         </Route>
+        <Route exact path="/file">
+          <div>
+            <form action="/" method="post" encType="mulipart/form-data" onSubmit={handleSubmit}>
+              <input type="file" name="image" />
+              <button type="submit">Отправить</button>
+            </form>
+            <img src={img} alt="Image"/>
+          </div>
+        </Route>
+        <Route path={router.ADMIN} component={AdminPage} />
       </Switch>
       
     </div>

@@ -1,0 +1,18 @@
+@import '../../../constants/variables.scss';
+
+.admin-header {
+  background-color: $passive-color;
+  width: 100%;
+  padding: 15px 25px;
+
+  &__link {
+    color: $main-white-color;
+    font-weight: 700;
+  }
+}
+
+.admin-main {
+  display: flex;
+  flex-direction: row;
+  // flex-wrap: nowrap;
+}

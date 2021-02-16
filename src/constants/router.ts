@@ -6,4 +6,7 @@ export default {
   FEEDBACK: '/feedback',
   DELIVERY: '/delivery',
   PRODUCT_CARD: '/productCard',
+  ADMIN: '/admin',
+  CATEGORIES: '/admin/categories',
+  PRODUCTS: '/admin/products',
 }

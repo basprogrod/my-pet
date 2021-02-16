@@ -1,0 +1,20 @@
+@import '../../../../constants/variables.scss';
+
+.products {
+  position: relative;
+  padding-top: 42px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__tools {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: $main-dark-color;
+  }
+}

@@ -1,0 +1,25 @@
+@import '../../../../constants/variables.scss';
+
+.sidebar {
+  width: 250px;
+  border-right: 1px solid $gray-color;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+  flex-shrink: 0;
+  
+  &__btn {
+    border: none;
+    margin-bottom: 4px;
+    padding: 5px;
+    cursor: pointer;
+
+    &:hover, &:active, &.active {
+      background-color: $black-color;
+      color: $main-white-color;
+    }
+
+     
+  }
+}
