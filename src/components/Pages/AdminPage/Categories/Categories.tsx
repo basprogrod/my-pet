@@ -5,7 +5,10 @@ const Categories = () => {
   return (
     <div className="categories">
       <div className="categories__tools">
-        <button>Добавить категорию</button>
+        <button className="categories__tools-btn">
+          <i className="icns-plus"></i>
+          <span>Добавить категорию</span>
+          </button>
       </div>
       <div className="categories__list">
         <Category />

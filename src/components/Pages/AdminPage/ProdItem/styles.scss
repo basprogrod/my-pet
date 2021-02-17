@@ -3,11 +3,40 @@
 .product-item {
   position: relative;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 180px;
   height: 180px;
   overflow: hidden;
-  border-radius: 12px;
+  padding: 5px;
   margin: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 80%;
+    background-image: linear-gradient(180deg, transparent, #0009);
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2;
+    font-size: 14px;
+    font-weight: 700;
+    color: $main-white-color;
+    margin-top: 45%;
+    text-shadow: 0 0 10px #0009;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
 
   &.table-view {
     height: 100px;
@@ -21,16 +50,32 @@
     width: 100%;
     height: 100%;
     background-color: $gray-color;
+    object-fit: cover;
+  }
+
+  &__footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    font-size: 14px;
+    color: $main-white-color;
+    padding-left: 10px;
+    width: 100%;
+
+    z-index: 1;
+  }
+
+  &__name {
+    font-size: 12px;
   }
 
   &__btns {
-    margin-top: auto;
-    width: 100%;
+    margin-left: auto;
+    padding-right: 10px;
     display: flex;
-    justify-content: space-around;
     position: relative;
     z-index: 1;
-    padding-bottom: 10px;
   }
 
   &.table-view {
@@ -54,6 +99,15 @@
         width: 100px;
         height: 25px;
       }
+    }
+  }
+
+  &__btn {
+    @include button;
+    font-size: 18px;
+
+    i {
+      margin: unset;
     }
   }
 }

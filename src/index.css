@@ -143,6 +143,116 @@ font-style: normal;
   color: #fff;
 }
 
+@font-face {
+  font-family: 'icons';
+  src:  url('./assets/fonts/icons.eot?n6ljp4');
+  src:  url('./assets/fonts/icons.eot?n6ljp4#iefix') format('embedded-opentype'),
+    url('./assets/fonts/icons.ttf?n6ljp4') format('truetype'),
+    url('./assets/fonts/icons.woff?n6ljp4') format('woff'),
+    url('./assets/fonts/icons.svg?n6ljp4#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icns-"], [class*=" icns-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icns-pencil:before {
+  content: "\e905";
+}
+.icns-paint-format:before {
+  content: "\e90c";
+}
+.icns-image:before {
+  content: "\e90d";
+}
+.icns-location2:before {
+  content: "\e948";
+}
+.icns-compass:before {
+  content: "\e949";
+}
+.icns-clock:before {
+  content: "\e94e";
+}
+.icns-clock2:before {
+  content: "\e94f";
+}
+.icns-spinner10:before {
+  content: "\e983";
+}
+.icns-binoculars:before {
+  content: "\e985";
+}
+.icns-search:before {
+  content: "\e986";
+}
+.icns-bin:before {
+  content: "\e9ac";
+}
+.icns-menu:before {
+  content: "\e9bd";
+}
+.icns-plus:before {
+  content: "\ea0a";
+}
+.icns-minus:before {
+  content: "\ea0b";
+}
+.icns-cancel-circle:before {
+  content: "\ea0d";
+}
+.icns-cross:before {
+  content: "\ea0f";
+}
+.icns-checkmark:before {
+  content: "\ea10";
+}
+.icns-circle-up:before {
+  content: "\ea41";
+}
+.icns-circle-right:before {
+  content: "\ea42";
+}
+.icns-circle-down:before {
+  content: "\ea43";
+}
+.icns-circle-left:before {
+  content: "\ea44";
+}
+.icns-sort-amount-asc:before {
+  content: "\ea4c";
+}
+.icns-sort-amount-desc:before {
+  content: "\ea4d";
+}
+.icns-checkbox-checked:before {
+  content: "\ea52";
+}
+.icns-checkbox-unchecked:before {
+  content: "\ea53";
+}
+.icns-filter:before {
+  content: "\ea5b";
+}
+.icns-new-tab:before {
+  content: "\ea7e";
+}
+
+
 h1, h2 {
   margin: 0;
   font-weight: 400;

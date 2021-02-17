@@ -1,0 +1,27 @@
+@import '../../constants/variables.scss';
+
+#modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  // background-color: $trnsp-black;
+  background-color: #0008;
+  opacity: 0.2;
+  transition: all 1s;
+  pointer-events: none;
+  z-index: 111;
+
+  &.active {
+    // pointer-events: unset;
+    opacity: 1;
+  }
+}
+
+.modal {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #fff;  
+}

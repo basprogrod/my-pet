@@ -3,7 +3,7 @@
 
 .categories {
   position: relative;
-  padding-top: 42px;
+  padding-top: 46px;
 
   &__list {
     display: flex;
@@ -17,5 +17,9 @@
     width: 100%;
     padding: 10px;
     background-color: $main-dark-color;
+
+    &-btn {
+      @include button;
+    }
   }
 }

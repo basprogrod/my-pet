@@ -3,7 +3,46 @@ $passive-color: #7d7d7d;
 $main-dark-color: #323232;
 $main-white-color: #fff;
 
+$trnsp-white: #fff2;
+$trnsp-black: #0002;
+
 $black-color: #000;
 $gray-color: #7d7d7d;
 
 $main-shadow-color: rgba(0, 0, 0, 0.15);
+
+@mixin button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  color: $main-white-color;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px #0005;
+
+  &:hover {
+    background-color: $trnsp-white;
+  }
+
+  &:active {
+    background-color: $main-white-color;
+    color: $main-dark-color
+  }
+
+  i {
+    margin-right: 8px;
+  }
+
+  &.ico {
+    i {
+      margin: unset;
+    }
+  }
+}
+
+@mixin shadow {
+  box-shadow: 0 0 15px #0009;
+}

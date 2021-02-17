@@ -1,0 +1,56 @@
+@import '../../constants/variables.scss';
+
+.select {
+  position: relative;
+  display: flex;
+  min-width: 15px;
+  z-index: 999;
+  color: $main-white-color;
+  padding-left: 10px;
+  transition: all 0.1s;
+  // background-color: $main-white-color;
+
+  &.active {
+    min-width: 200px;
+  }
+  &:hover {
+    background-color: $trnsp-white;
+  }
+
+  &__icon {
+    margin-right: 10px;
+  }
+
+  &__display {
+    display: flex;
+    align-items: center;
+    // padding-left: 30px;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__dropdown {
+    position: absolute;
+    width: 100%;
+    top: 30px;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+    background-color: $main-white-color;
+    color: $main-dark-color;
+    padding-left: 15px;
+    z-index: 1;
+
+    @include shadow;
+
+    li {
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    &.active {
+      height: 150px;
+    }
+  }
+}

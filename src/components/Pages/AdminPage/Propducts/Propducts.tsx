@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Select from '../../../Select'
 import ProdItem from '../ProdItem'
 import './styles.scss'
 
@@ -13,10 +14,16 @@ const Propducts = () => {
   return (
     <div className="products">
       <div className="products__tools">
-        <button>Добавить категорию</button>
-        <button>А - Я</button>
-        <button>Я - А</button>
-        <button onClick={handleSetTableView}>Таблица / Плитка</button>
+        <button className="products__tools-btn">
+          <i className="icns-plus"></i>
+          <span>Добавить продукт</span>
+        </button>        
+        <button 
+          className="products__tools-btn"
+          onClick={handleSetTableView}>
+            Вид
+        </button>
+        <Select />
       </div>
 
       <div className="products__list">

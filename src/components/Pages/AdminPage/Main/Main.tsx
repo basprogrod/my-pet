@@ -7,7 +7,7 @@ import './styles.scss'
 
 const Main = () => {
   return (
-    <div className="mainbar b">
+    <div className="mainbar">
       <Switch>
         <Route path={router.CATEGORIES} component={Categories} />
         <Route path={router.PRODUCTS} component={Propducts} />

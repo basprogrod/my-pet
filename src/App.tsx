@@ -72,6 +72,15 @@ function App() {
         <Route exact path={router.PAYMENT} component={PaymentPage} />
         <Route exact path={router.PRODUCT_CARD} component={PropductCard} />
         <Route exact path="/123">
+          <div className="icns-pencil"></div>
+          <div className="icon-search"></div>
+          <div className="icon-cart"></div>
+          <div className="icon-arrow-prev"></div>
+          <div className="icon-arrow-next"></div>
+          <div className="icon-roll"></div>
+          <div className="icon-gray-"></div>
+          <div className="icon-mail"></div>
+          <div className="icon-clock"></div>
           <Quantiti quantity={2} onSelect={() => {}} onChange={(e) => {}}/>
           <ColorRow colors={colorsMock}/>
           <SizesRow sizes={sizesMock} />
