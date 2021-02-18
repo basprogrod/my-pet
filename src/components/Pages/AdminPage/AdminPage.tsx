@@ -8,15 +8,25 @@ import Sidebar from "./Sidebar"
 import './styles.scss'
 
 const initState = {
-  isModalShow: false
+  isModalShow: false,
+  modalType: undefined,
 }
 
 const AdminPage = () => {
   const [state, setState] = useState(initState)
+
+  const handleCloseWindow = () => {
+    setState({...state, isModalShow: false})
+  }
+
+  const handleShowModal = (type: string) => {
+    setState({...state, isModalShow: true})
+  }
+
   return (
     <>
-      {/* {state.isModalShow && <Window />} */}
-      {/* <button onClick={() => setState({...state, isModalShow: !state.isModalShow})}>qwe</button> */}
+      {state.isModalShow && <Window closeWindow={handleCloseWindow} />}
+
       <header className="admin-header">
         <NavLink className="admin-header__link" to={router.HOME}>В магазин</NavLink>
       </header>

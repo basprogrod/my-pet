@@ -1,43 +1,33 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
+import ModalWindow from '../ModalWindow'
 
 import './styles.scss'
 
-const Window = () => {
+const modal: HTMLDivElement = document.createElement('div')
+modal.id = 'modal'
 
-  const [isShow, setIsShow] = useState(false)
+const Window = ({
+  closeWindow,
+}: any) => {
+  const [state, setState] = useState(false)
 
-  const modal: HTMLDivElement = document.createElement('div')
-  modal.id = 'modal'
-
-  const handleShow = () => {
-    setIsShow(true)
+  const handleClose = () => {
+    setState(false)
+    setTimeout(() => closeWindow(), 300)
   }
 
-  // useEffect(() => {
-  //   if (isShow) {
-  //     document.getElementById('modal')?.classList.add('active')
-  //   } else {
-  //     document.getElementById('modal')?.classList.remove('active')
-  //   }
-  // }, [isShow])
+  useEffect(() => {
+    setTimeout(() => {setState(true)}, 300)
 
-  useEffect(() => {    
-    // setTimeout(() => {
-      // handleShow()
-    // }, 100)
     document.body.appendChild(modal)
+
     return () => {
       document.body.removeChild(modal)
     }
   }, [])
   
-  // const render = (): React.ReactElement => {
-  //   return (
-      
-  //   )
-  // }
-  return createPortal(<div className={`modal`}>123</div>, modal)
+  return createPortal(<ModalWindow isShow={state} handleClose={handleClose} />, modal)
 }
 
 export default Window

@@ -10,7 +10,6 @@ import dictionary from '../../constants/dictionary'
 
 const Header = () => {
   const location = useLocation()
-  console.log(location);
   
   const [isOpenNav, setIsOpenNav] = useState(false)
   const [isFixedHeader, setIsFixedHeader] = useState(true)
