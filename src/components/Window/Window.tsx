@@ -35,7 +35,7 @@ const Window = () => {
     <ModalWindow 
       isShow={state} 
       handleClose={handleClose} 
-      render={() => <ModalComponent handleClose={handleClose} />}
+      render={ModalComponent}
     />, 
     modal
   )

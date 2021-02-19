@@ -11,7 +11,7 @@ const Propducts = () => {
   const { handleShowModal } = useContext(ModalWindowContext) as IModalContext
 
   const openProducAddModal = () => {
-    handleShowModal(modalTypes.ADD_PROJECT_MODAL)
+    handleShowModal(modalTypes.ADD_PRODUCT_MODAL)
   }
 
   const [tableView, setTableView] = useState(false)

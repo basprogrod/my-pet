@@ -20,7 +20,7 @@ const ModalWindow = ({
       className={`modal-window ${isShow ? 'active' : ''}`} 
       onClick={handleCloseByOutside}
     >
-      {render()}
+      {render}
     </div>
   )
 }

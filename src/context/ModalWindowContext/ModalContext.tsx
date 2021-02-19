@@ -19,7 +19,12 @@ const ModalContext = ({
   }
 
   const handleShowModal = (type: string) => {
-    setState({ ...state, isModalShow: true, ModalComponent: Modals[type] })
+    const Comp = Modals[type].Comp
+    setState({ 
+      ...state, 
+      isModalShow: true, 
+      ModalComponent: Modals[type]
+    })
   }
 
   const handleShowWarn = (id: string) => {

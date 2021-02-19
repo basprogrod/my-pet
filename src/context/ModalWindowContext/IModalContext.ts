@@ -2,7 +2,7 @@ import { ModalsPropTypes } from "../../components/ModalWindow/IModalWindow";
 
 export interface IModalContextState {
   isModalShow: boolean
-  ModalComponent: React.FC<ModalsPropTypes> | undefined
+  ModalComponent: React.FC<ModalsPropTypes> | undefined | any
   deletingCat: string | number | undefined
 }
 
