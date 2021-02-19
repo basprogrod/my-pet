@@ -1,9 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { IModalContext } from '../../../../context/ModalWindowContext/IModalContext'
+import ModalWindowContext from '../../../../context/ModalWindowContext/ModalWindowContext'
+import { modalTypes } from '../../../ModalWindow/Modals'
 import Select from '../../../Select'
 import ProdItem from '../ProdItem'
+
 import './styles.scss'
 
 const Propducts = () => {
+  const { handleShowModal } = useContext(ModalWindowContext) as IModalContext
+
+  const openProducAddModal = () => {
+    handleShowModal(modalTypes.ADD_PROJECT_MODAL)
+  }
 
   const [tableView, setTableView] = useState(false)
 
@@ -14,7 +23,7 @@ const Propducts = () => {
   return (
     <div className="products">
       <div className="products__tools">
-        <button className="products__tools-btn">
+        <button className="products__tools-btn" onClick={openProducAddModal}>
           <i className="icns-plus"></i>
           <span>Добавить продукт</span>
         </button>        

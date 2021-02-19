@@ -1,26 +1,22 @@
 import { useEffect, useState } from 'react'
+import ProductAddModal from './ProductAddModal'
 import './styles.scss'
 
 const ModalWindow = ({
   isShow,
   handleClose,
+  render,
 }: any) => {
 
+  const handleCloseByOutside = (e: React.MouseEvent) => {
+    const el = e.target as HTMLDivElement
+  
+    if (el.id === 'outside') handleClose()
+  }
+
   return (
-    <div className={`modal-window ${isShow ? 'active' : ''}`}>
-      <div className="modal-window__header">
-        <div className="modal-window__title">Заголовок</div>
-        <i className="icns-cross"></i>
-      </div>
-
-      <div className="modal-window__body">
-        123
-      </div>
-
-      <div className="modal-window__footer">
-        <button onClick={handleClose}>1</button>
-        <button>2</button>
-      </div>
+    <div id="outside" className={`modal-window ${isShow ? 'active' : ''}`} onClick={handleCloseByOutside}>
+      {render()}
     </div>
   )
 }

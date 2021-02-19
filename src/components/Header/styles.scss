@@ -209,3 +209,17 @@
     right: 0px;
   }
 }
+
+.modal-window {
+  &__header {
+    .icns-cross {
+      cursor: pointer;
+      padding: 5px;
+
+      &:hover {
+        background-color: $main-dark-color;
+        color: $main-white-color;
+      }
+    }
+  }
+}

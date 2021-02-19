@@ -1,31 +1,24 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { NavLink } from "react-router-dom"
 import router from "../../../constants/router"
+import ModalContext from "../../../context/ModalWindowContext/ModalContext"
+import ModalWindowContext from "../../../context/ModalWindowContext/ModalWindowContext"
+import ModalWindow from "../../ModalWindow"
 import Select from "../../Select"
 import Window from "../../Window"
 import Main from "./Main"
 import Sidebar from "./Sidebar"
 import './styles.scss'
 
-const initState = {
-  isModalShow: false,
-  modalType: undefined,
-}
+const initState = {}
 
 const AdminPage = () => {
+  const { isModalShow } = useContext(ModalWindowContext)
   const [state, setState] = useState(initState)
-
-  const handleCloseWindow = () => {
-    setState({...state, isModalShow: false})
-  }
-
-  const handleShowModal = (type: string) => {
-    setState({...state, isModalShow: true})
-  }
 
   return (
     <>
-      {state.isModalShow && <Window closeWindow={handleCloseWindow} />}
+      {isModalShow && <Window />}
 
       <header className="admin-header">
         <NavLink className="admin-header__link" to={router.HOME}>В магазин</NavLink>
