@@ -12,10 +12,14 @@ const ModalWindow = ({
     const el = e.target as HTMLDivElement
   
     if (el.id === 'outside') handleClose()
-  }
+  } 
 
   return (
-    <div id="outside" className={`modal-window ${isShow ? 'active' : ''}`} onClick={handleCloseByOutside}>
+    <div 
+      id="outside" 
+      className={`modal-window ${isShow ? 'active' : ''}`} 
+      onClick={handleCloseByOutside}
+    >
       {render()}
     </div>
   )
