@@ -5,7 +5,7 @@ import ModalWindowContext from "./ModalWindowContext"
 
 const initialState: IModalContextState = {
   isModalShow: false,
-  ModalComponent: undefined,
+  modalData: undefined,
   deletingCat: undefined,
 }
 
@@ -15,20 +15,19 @@ const ModalContext = ({
   const [state, setState] = useState(initialState)
 
   const handleCloseWindow = () => {
-    setState({ ...state, isModalShow: false, ModalComponent: undefined, deletingCat: undefined })
+    setTimeout(() => setState({ ...state, isModalShow: false, modalData: undefined, deletingCat: undefined }), 300)
   }
 
   const handleShowModal = (type: string) => {
-    const Comp = Modals[type].Comp
     setState({ 
       ...state, 
       isModalShow: true, 
-      ModalComponent: Modals[type]
+      modalData: Modals[type]
     })
   }
 
   const handleShowWarn = (id: string) => {
-    setState({ ...state, isModalShow: true, ModalComponent: Modals.WARN_MODAL, deletingCat: id })
+    setState({ ...state, isModalShow: true, modalData: Modals.WARN_MODAL, deletingCat: id })
     console.log('WARN id', id);
   }
 
