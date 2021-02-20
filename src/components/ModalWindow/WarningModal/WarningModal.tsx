@@ -4,6 +4,7 @@ import ModalWindowContext from "../../../context/ModalWindowContext/ModalWindowC
 
 const WarningModal = ({
   handleClose,
+  title,
 }: any) => {
 
   const { deletingCat } = useContext<IModalContext>(ModalWindowContext)
@@ -11,11 +12,12 @@ const WarningModal = ({
   const handleDelete = () => {
     // handleDel(deletingCat)
     console.log('Delete', deletingCat);
+    handleClose()
   }
 
   return <div className="modal-window__popup product-popup">
     <div className="modal-window__header">
-      <div className="modal-window__title">Удаление</div>
+      <div className="modal-window__title">{title}</div>
       <i className="icns-cross" onClick={handleClose}></i>
     </div>
     <div className="modal-window__body">

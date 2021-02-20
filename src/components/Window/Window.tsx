@@ -10,33 +10,16 @@ const modal: HTMLDivElement = document.createElement('div')
 modal.id = 'modal'
 
 const Window = () => {
-  const { handleCloseWindow, ModalComponent } = useContext<IModalContext>(ModalWindowContext)
-  const [state, setState] = useState(false)
-
-  const handleClose = () => {
-    setState(false)
-
-    setTimeout(() => handleCloseWindow(), 300)
-  }
 
   useEffect(() => {
-    setTimeout(() => {setState(true)}, 300)
-
     document.body.appendChild(modal)
-
     return () => {
       document.body.removeChild(modal)
     }
   }, [])
-
-  if (!ModalComponent) return null
   
   return createPortal(
-    <ModalWindow 
-      isShow={state} 
-      handleClose={handleClose} 
-      render={() => <ModalComponent handleClose={handleClose} />}
-    />, 
+    <ModalWindow />, 
     modal
   )
 }

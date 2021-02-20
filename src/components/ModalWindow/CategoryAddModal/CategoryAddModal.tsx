@@ -4,7 +4,8 @@ import { CategoryAddModalProps } from "./ICategoryAddModal"
 import './styles.scss'
 
 const CategoryAddModal = ({
-  handleClose
+  handleClose,
+  title,
 }: CategoryAddModalProps) => {
   const { img, handleSetImg } = useSetImage()
   
@@ -12,10 +13,11 @@ const CategoryAddModal = ({
     e.preventDefault()
     handleClose()
   }
+  
   return (
     <form className="modal-window__popup category-popup" onSubmit={handleSubmit}>
         <div className="modal-window__header">
-          <div className="modal-window__title">Заголовок</div>
+          <div className="modal-window__title">{title}</div>
           <i className="icns-cross" onClick={handleClose}></i>
         </div>
 

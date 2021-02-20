@@ -5,7 +5,8 @@ import { ProductAddModalProps } from "./IProductAddModal"
 import './styles.scss'
 
 const ProductAddModal = ({
-  handleClose
+  handleClose,
+  title,
 }: ProductAddModalProps) => {
   const { img, handleSetImg } = useSetImage()
 
@@ -17,7 +18,7 @@ const ProductAddModal = ({
   return (
     <form className="modal-window__popup product-popup" onSubmit={handleSubmit}>
         <div className="modal-window__header">
-          <div className="modal-window__title">Заголовок</div>
+          <div className="modal-window__title">{title}</div>
           <i className="icns-cross" onClick={handleClose}></i>
         </div>
 
