@@ -1,17 +1,25 @@
 import useSetImage from "../../../hooks/useSetImage"
+import { useDispatch } from 'react-redux'
 import { CategoryAddModalProps } from "./ICategoryAddModal"
+import axios from 'axios'
 
 import './styles.scss'
+import { SERVER_URL } from "../../../constants/constants"
+import actionTypes from "../../../store/actions/actionTypes"
 
 const CategoryAddModal = ({
+
   handleClose,
   title,
 }: CategoryAddModalProps) => {
   const { img, handleSetImg } = useSetImage()
+  const dispatch = useDispatch()
   
-  const handleSubmit = (e: React.FormEvent ) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement> ) => {
+    const form = e.target as HTMLFormElement
     e.preventDefault()
-    handleClose()
+    dispatch({type: actionTypes.net.ADD_CATEGORY, payload: form})
+    handleClose()    
   }
   
   return (

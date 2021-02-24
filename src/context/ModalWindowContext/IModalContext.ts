@@ -1,8 +1,8 @@
-import { ModalsPropTypes } from "../../components/ModalWindow/IModalWindow";
+import { ModalsData, ModalsPropTypes } from "../../components/ModalWindow/IModalWindow";
 
 export interface IModalContextState {
   isModalShow: boolean
-  modalData: React.FC<ModalsPropTypes> | undefined | any
+  modalData: ModalsData | undefined
   deletingCat: string | number | undefined
 }
 

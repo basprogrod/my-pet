@@ -9,9 +9,7 @@ export const modalTypes: {[type: string]: string} = {
   WARN_MODAL: 'WARN_MODAL',
 }
 
-
-
-export const Modals: any = {
+export const Modals: ModalsType = {
   ADD_PRODUCT_MODAL: {
     Comp: ProductAddModal,
     title: 'Добавить продукт',

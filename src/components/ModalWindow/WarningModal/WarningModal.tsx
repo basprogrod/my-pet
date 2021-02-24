@@ -1,17 +1,21 @@
 import { useContext } from "react";
+import { useSelector, useDispatch } from 'react-redux'
 import { IModalContext } from "../../../context/ModalWindowContext/IModalContext";
 import ModalWindowContext from "../../../context/ModalWindowContext/ModalWindowContext";
+import actionTypes from "../../../store/actions/actionTypes";
+import { WarningModalProps } from "./IWarningModal";
 
 const WarningModal = ({
   handleClose,
   title,
-}: any) => {
+}: WarningModalProps) => {
 
   const { deletingCat } = useContext<IModalContext>(ModalWindowContext)
 
+  const store = useSelector((state) => state)
+  const dispatch = useDispatch()
+
   const handleDelete = () => {
-    // handleDel(deletingCat)
-    console.log('Delete', deletingCat);
     handleClose()
   }
 

@@ -1,1 +1,4 @@
-export default {}
+export type WarningModalProps = {
+  handleClose: () => void
+  title: string
+}
