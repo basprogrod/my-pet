@@ -8,11 +8,11 @@ import { SERVER_URL } from "../../../constants/constants"
 import actionTypes from "../../../store/actions/actionTypes"
 
 const CategoryAddModal = ({
-
   handleClose,
   title,
+  image,
 }: CategoryAddModalProps) => {
-  const { img, handleSetImg } = useSetImage()
+  const { img, handleSetImg } = useSetImage(image)
   const dispatch = useDispatch()
   
   const handleSubmit = (e: React.FormEvent<HTMLFormElement> ) => {

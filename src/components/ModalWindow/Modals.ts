@@ -19,6 +19,10 @@ export const Modals: ModalsType = {
     title: 'Добавить категорию',
     
   },
+  UPDATE_CATEGORY_MODAL: {
+    Comp: CategoryAddModal,
+    title: 'Редактировать категорию',
+  },
   WARN_MODAL: {
     Comp: WarningModal,
     title: 'Удаление',

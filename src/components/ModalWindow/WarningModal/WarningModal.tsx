@@ -3,7 +3,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { IModalContext } from "../../../context/ModalWindowContext/IModalContext";
 import ModalWindowContext from "../../../context/ModalWindowContext/ModalWindowContext";
 import actionTypes from "../../../store/actions/actionTypes";
+import axios from 'axios'
 import { WarningModalProps } from "./IWarningModal";
+import { SERVER_URL } from "../../../constants/constants";
 
 const WarningModal = ({
   handleClose,
@@ -17,6 +19,7 @@ const WarningModal = ({
 
   const handleDelete = () => {
     handleClose()
+    axios.delete(`${SERVER_URL}/deleteCategory/${deletingCat}`)
   }
 
   return <div className="modal-window__popup product-popup">

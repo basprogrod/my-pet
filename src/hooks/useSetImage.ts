@@ -1,7 +1,7 @@
 import { SetStateAction, useState } from "react"
 
-export default () => {
-  const [img, setImg] = useState<any>('') // problem any
+export default (image: string = '') => {
+  const [img, setImg] = useState<any>(image) // problem any
 
   const handleSetImg = (e: React.ChangeEvent) => {
     const input = e.target as HTMLInputElement

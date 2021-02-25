@@ -36,7 +36,7 @@ const Categories = () => {
         {
           categories.map((item: any) => (
             <Category key={item.id} id={item.id} img={item.img} name={item.title} handleShowWarn={() => {
-              handleShowWarn('Cat_1')
+              handleShowWarn(item.id)
             }}/>
           ))
         }

@@ -8,10 +8,9 @@ export default function*(action: any) {
   try {
     const fd = new FormData(payload)
 
-    const resp = yield call(axios.post, `${SERVER_URL}/addCategory`, fd)  
+    yield call(axios.post, `${SERVER_URL}/addCategory`, fd)  
 
   } catch (error) {
     console.log("-> error", error)
-    
   }
 }

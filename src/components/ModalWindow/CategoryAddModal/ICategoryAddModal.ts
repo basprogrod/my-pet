@@ -1,5 +1,6 @@
 export type CategoryAddModalProps = {
   handleClose: () => void
-  title: string
+  title: string,
+  image?: string,
   [type: string]: any
 }
