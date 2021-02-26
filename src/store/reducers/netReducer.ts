@@ -3,6 +3,8 @@ import actionTypes from "../actions/actionTypes"
 
 export type InitStateType = {
   categories: any[]
+  products: any[]
+  loader: boolean,
 }
 
 export type NetReducerType = {
@@ -11,6 +13,8 @@ export type NetReducerType = {
 
 const initState: InitStateType = {
   categories: [],
+  products: [],
+  loader: false,
 }
 
 export default (state = initState, action: any) => {
@@ -18,12 +22,24 @@ export default (state = initState, action: any) => {
 
   switch (type) {
     case actionTypes.net.GET_CATEGORIES: 
-      console.log('loader');
-      return state
+      return {
+        ...state, loader: true,
+      }
+    case actionTypes.net.GET_PRODUCTS: 
+      return {
+        ...state, loader: true,
+      }
     case actionTypes.net.SET_CATEGORIES_TO_STORE: 
       return {
         ...state,
         categories: payload,
+        loader: false,
+      }
+    case actionTypes.net.SET_PRODUCTS_TO_STORE: 
+      return {
+        ...state,
+        products: payload,
+        loader: false,
       }
     default:
       return state

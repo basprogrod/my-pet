@@ -3,7 +3,7 @@ import { ModalsData, ModalsPropTypes } from "../../components/ModalWindow/IModal
 export interface IModalContextState {
   isModalShow: boolean
   modalData: ModalsData | undefined
-  deletingCat: string | number | undefined
+  deletingRecord: string | number | undefined
 }
 
 export interface IModalContext extends IModalContextState {

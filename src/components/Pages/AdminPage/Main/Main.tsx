@@ -1,8 +1,9 @@
 import { Route, Switch } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import router from '../../../../constants/router'
 import Categories from '../Categories'
-import Category from '../Category'
 import Propducts from '../Propducts'
+import { InitStateType } from '../../../../store/reducers/netReducer'
 import './styles.scss'
 
 const Main = () => {

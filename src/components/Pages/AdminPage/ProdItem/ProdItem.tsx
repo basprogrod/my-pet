@@ -1,21 +1,38 @@
+import { useDispatch } from 'react-redux'
 import image from '../../../../assets/img/product-img.jpg'
+import { ProdItemProps } from './IProdItem'
+
 import './styles.scss'
 
-const ProdItem = ({tableView}: any) => {
+const ProdItem = ({
+  tableView,
+  name,
+  price,
+  brand,
+  desctiption,
+  img,
+  category,
+}: ProdItemProps) => {
+
+  const disp = useDispatch()
+
+  const handleClick = () => {    
+    // disp({type: 'KEK', lol: 'Chel]k'})
+  }
 
   return (
-    <div className={`product-item ${tableView ? 'table-view' : ''}`}>
+    <div className={`product-item ${tableView ? 'table-view' : ''}`} onClick={handleClick}>
       <div className="product-item__title">
-        Название товара
+        {name}
       </div>
-      <img src={image} alt="" className="product-item__bg"/>
+      <img src={img} alt="" className="product-item__bg"/>
       <div className="product-item__footer">
         <div className="product-item__info">
           <div className="product-item__price">
-            50 BYN
+            {price}
           </div>
           <div className="product-item__name">
-            Бренд
+            {brand}
           </div>
         </div>
         <div className="product-item__btns">

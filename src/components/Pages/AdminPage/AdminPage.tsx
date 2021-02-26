@@ -1,10 +1,7 @@
-import { useContext, useState } from "react"
+import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import router from "../../../constants/router"
-import ModalContext from "../../../context/ModalWindowContext/ModalContext"
-import ModalWindowContext from "../../../context/ModalWindowContext/ModalWindowContext"
-import ModalWindow from "../../ModalWindow"
-import Select from "../../Select"
+import useModalContext from "../../../hooks/useModalContext"
 import Window from "../../Window"
 import Main from "./Main"
 import Sidebar from "./Sidebar"
@@ -13,7 +10,7 @@ import './styles.scss'
 const initState = {}
 
 const AdminPage = () => {
-  const { isModalShow } = useContext(ModalWindowContext)
+  const { isModalShow } = useModalContext()
   const [state, setState] = useState(initState)
 
   return (

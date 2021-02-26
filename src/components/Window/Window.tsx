@@ -1,7 +1,5 @@
-import { useContext, useEffect, useState } from 'react'
+import {  useEffect } from 'react'
 import { createPortal } from 'react-dom'
-import { IModalContext } from '../../context/ModalWindowContext/IModalContext'
-import ModalWindowContext from '../../context/ModalWindowContext/ModalWindowContext'
 import ModalWindow from '../ModalWindow'
 
 import './styles.scss'

@@ -1,12 +1,10 @@
-import { useContext, useEffect, useState } from 'react'
-import { IModalContext } from '../../context/ModalWindowContext/IModalContext'
-import ModalWindowContext from '../../context/ModalWindowContext/ModalWindowContext'
+import { useEffect, useState } from 'react'
+import useModalContext from '../../hooks/useModalContext'
 import { ModalsData } from './IModalWindow'
-import ProductAddModal from './ProductAddModal'
 import './styles.scss'
 
 const ModalWindow = () => {
-  const { handleCloseWindow, modalData } = useContext<IModalContext>(ModalWindowContext)
+  const { handleCloseWindow, modalData } = useModalContext()
   const { Comp, title } = modalData as ModalsData
   
   const [isShow, setIsShow] = useState(false)

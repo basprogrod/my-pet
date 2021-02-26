@@ -1,25 +1,21 @@
-import { useContext } from "react";
 import { useSelector, useDispatch } from 'react-redux'
-import { IModalContext } from "../../../context/ModalWindowContext/IModalContext";
-import ModalWindowContext from "../../../context/ModalWindowContext/ModalWindowContext";
-import actionTypes from "../../../store/actions/actionTypes";
-import axios from 'axios'
+import useModalContext from "../../../hooks/useModalContext";
+import actionTypes from '../../../store/actions/actionTypes';
 import { WarningModalProps } from "./IWarningModal";
-import { SERVER_URL } from "../../../constants/constants";
 
 const WarningModal = ({
   handleClose,
   title,
 }: WarningModalProps) => {
 
-  const { deletingCat } = useContext<IModalContext>(ModalWindowContext)
+  const { deletingRecord } = useModalContext()
 
   const store = useSelector((state) => state)
   const dispatch = useDispatch()
 
   const handleDelete = () => {
     handleClose()
-    axios.delete(`${SERVER_URL}/deleteCategory/${deletingCat}`)
+    dispatch({type: actionTypes.net.DELETE_A_RECORD, id: deletingRecord})
   }
 
   return <div className="modal-window__popup product-popup">
