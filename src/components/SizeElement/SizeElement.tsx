@@ -1,4 +1,3 @@
-
 import { SizeElementProps } from './ISizeElement'
 import './styles.scss'
 
@@ -8,13 +7,16 @@ const SizeElement = ({
   isExist,
   onClick,
 }: SizeElementProps) => {
-
   const handleClick = () => onClick(type)
-  
+
   return (
-    <button 
-      className={`size ${isSelected ? 'active' : ''} ${isExist ? '' : 'inactive'}`}
-      onClick={handleClick}>{type}
+    <button
+      className={`size ${isSelected ? 'active' : ''} ${
+        isExist ? '' : 'inactive'
+      }`}
+      onClick={handleClick}
+    >
+      {type}
     </button>
   )
 }

@@ -1,5 +1,5 @@
 export type ColorElementProps = {
-  link: string,
+  link: string
   type: string | number
   isSelected?: boolean
   onClick: (e: string | number) => void

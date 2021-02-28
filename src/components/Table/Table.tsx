@@ -1,12 +1,7 @@
-import { TableProps } from "./ITable"
+import { TableProps } from './ITable'
 
-const Table = ({
-  dataSource,
-  columnsConfig,
-}: TableProps) => {
-  return (
-    <div>Table</div>
-  )
+const Table = ({ dataSource, columnsConfig }: TableProps) => {
+  return <div>Table</div>
 }
 
 export default Table

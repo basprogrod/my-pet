@@ -13,7 +13,6 @@ const Main = () => {
         <Route path={router.CATEGORIES} component={Categories} />
         <Route path={router.PRODUCTS} component={Propducts} />
       </Switch>
-      
     </div>
   )
 }

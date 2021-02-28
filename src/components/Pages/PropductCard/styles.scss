@@ -11,7 +11,7 @@
 
   &__name {
     color: $gray-color;
-    font-family: "Noto Sans";
+    font-family: 'Noto Sans';
     font-size: 15px;
     line-height: 25px;
   }
@@ -30,15 +30,18 @@
     margin-bottom: 20px;
   }
 
-  &__price, &__discount, &__currency {
+  &__price,
+  &__discount,
+  &__currency {
     font-size: 20px;
     font-weight: 700;
     line-height: 25px;
-    color: $active-color
+    color: $active-color;
   }
 
-  &__currency, &__discount {
-    color: $black-color
+  &__currency,
+  &__discount {
+    color: $black-color;
   }
 
   &__discount {

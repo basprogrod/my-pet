@@ -1,10 +1,11 @@
-import { useState } from "react"
-import { NavLink } from "react-router-dom"
-import router from "../../../constants/router"
-import useModalContext from "../../../hooks/useModalContext"
-import Window from "../../Window"
-import Main from "./Main"
-import Sidebar from "./Sidebar"
+import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import router from '../../../constants/router'
+import useModalContext from '../../../hooks/useModalContext'
+import Window from '../../Window'
+import Main from './Main'
+import Sidebar from './Sidebar'
+
 import './styles.scss'
 
 const initState = {}
@@ -18,7 +19,9 @@ const AdminPage = () => {
       {isModalShow && <Window />}
 
       <header className="admin-header">
-        <NavLink className="admin-header__link" to={router.HOME}>В магазин</NavLink>
+        <NavLink className="admin-header__link" to={router.HOME}>
+          В магазин
+        </NavLink>
       </header>
 
       <main className="admin-main">

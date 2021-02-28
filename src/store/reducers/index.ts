@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import netReducer from './netReducer'
 
-const rootReducer =  combineReducers({
+const rootReducer = combineReducers({
   netReducer,
 })
 

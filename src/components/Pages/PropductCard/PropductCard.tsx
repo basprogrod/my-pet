@@ -10,7 +10,6 @@ import ProductForm from './ProductForm'
 import './styles.scss'
 
 const PropductCard = ({}) => {
-  
   return (
     <div className="product-card">
       <div className="container product-card__container">
@@ -18,10 +17,10 @@ const PropductCard = ({}) => {
           <div className="container__cell">1</div>
           <div className="container__cell">
             <ProductForm
-              title='Название товара'
-              name='Имя товара'
+              title="Название товара"
+              name="Имя товара"
               price={50}
-              currency='BYN'
+              currency="BYN"
               discount={100}
               colors={colorsMock}
               sizes={sizesMock}

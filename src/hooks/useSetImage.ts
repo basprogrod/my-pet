@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react"
+import { SetStateAction, useState } from 'react'
 
 export default (image: string = '') => {
   const [img, setImg] = useState<any>(image) // problem any
@@ -6,7 +6,7 @@ export default (image: string = '') => {
   const handleSetImg = (e: React.ChangeEvent) => {
     const input = e.target as HTMLInputElement
 
-    if (!(input.files?.length)) return 
+    if (!input.files?.length) return
 
     const reader = new FileReader()
 
@@ -16,5 +16,5 @@ export default (image: string = '') => {
     }
   }
 
-  return {img, handleSetImg}
+  return { img, handleSetImg }
 }

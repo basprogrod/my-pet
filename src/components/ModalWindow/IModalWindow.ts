@@ -1,5 +1,5 @@
-import { CategoryAddModalProps } from "./CategoryAddModal/ICategoryAddModal"
-import { ProductAddModalProps } from "./ProductAddModal/IProductAddModal"
+import { CategoryAddModalProps } from './CategoryAddModal/ICategoryAddModal'
+import { ProductAddModalProps } from './ProductAddModal/IProductAddModal'
 
 export type ModalsPropTypes = ProductAddModalProps | CategoryAddModalProps
 

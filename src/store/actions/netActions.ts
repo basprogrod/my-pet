@@ -1,5 +1,5 @@
-import actionTypes from "./actionTypes"
-import { Action } from "./IActions"
+import actionTypes from './actionTypes'
+import { Action } from './IActions'
 
 const { net } = actionTypes
 

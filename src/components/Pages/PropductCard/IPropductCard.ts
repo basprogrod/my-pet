@@ -1,5 +1,5 @@
-import { Colors } from "../../ColorRow/IColorRow";
-import { Sizes } from "../../SizesRow/ISizesRow";
+import { Colors } from '../../ColorRow/IColorRow'
+import { Sizes } from '../../SizesRow/ISizesRow'
 
 export type PropductCardProps = {
   title: string

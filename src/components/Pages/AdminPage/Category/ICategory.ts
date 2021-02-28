@@ -1,6 +1,5 @@
 export type CategoryProps = {
-  id: string | number
+  id: string
   name: string
-  handleShowWarn: () => void
   img: string
 }

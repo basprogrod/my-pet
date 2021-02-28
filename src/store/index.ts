@@ -6,13 +6,10 @@ import rootSaga from './sagas/rootSaga'
 
 const sagaMW = createSagaMiddleware()
 const logger = createLogger({
-  collapsed: true
+  collapsed: true,
 })
 
-const middlewares: any = [
-  sagaMW,
-  logger,
-]
+const middlewares: any = [sagaMW, logger]
 
 const store = createStore(rootReducer, applyMiddleware(...middlewares))
 

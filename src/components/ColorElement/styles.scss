@@ -15,7 +15,8 @@
     object-fit: contain;
   }
 
-  &:hover, &.active {
+  &:hover,
+  &.active {
     border-color: $active-color;
   }
 

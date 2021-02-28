@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from 'react'
 import './styles.scss'
 
 export type SelectProps = {
@@ -10,12 +10,7 @@ export type SelectProps = {
 
 const arr = ['Цена', 'Название', 'Дата']
 
-const Select = ({
-  value,
-  options = arr,
-  onSelect,
-}: SelectProps) => {
-
+const Select = ({ value, options = arr, onSelect }: SelectProps) => {
   const [item, setItem] = useState<string | undefined>(undefined)
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false)
 
@@ -30,25 +25,26 @@ const Select = ({
 
   return (
     <div className={`select ${isDropdownOpen || item ? 'active' : ''}`}>
-    
-      <div className="select__display" onClick={handleOpenDropdown} >
+      <div className="select__display" onClick={handleOpenDropdown}>
         <i className="select__icon icns-sort-amount-asc"></i>
-        {
-          item ? (
-            <span>{options[+item]}</span>
-          ) : ''
-        }
+        {item ? <span>{options[+item]}</span> : ''}
       </div>
       <ul className={`select__dropdown ${isDropdownOpen ? 'active' : ''}`}>
-      {
-        options.map((el, index) => (
-          <li key={index} className="selctet_item" onClick={() => hendleClick(index.toString())}>
+        {options.map((el, index) => (
+          <li
+            key={index}
+            className="selctet_item"
+            onClick={() => hendleClick(index.toString())}
+          >
             {el}
           </li>
-        ))
-      }
+        ))}
 
-        <li key="undefined" className="selctet_item" onClick={() => hendleClick(undefined)}>
+        <li
+          key="undefined"
+          className="selctet_item"
+          onClick={() => hendleClick(undefined)}
+        >
           По умолчанию
         </li>
       </ul>

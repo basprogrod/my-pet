@@ -1,7 +1,11 @@
-import { useState } from "react"
-import { Modals } from "../../components/ModalWindow/Modals"
-import { IModalContext, IModalContextState } from "./IModalContext"
-import ModalWindowContext from "./ModalWindowContext"
+import { useState } from 'react'
+import { Modals } from '../../components/ModalWindow/Modals'
+import {
+  DeletingRecordType,
+  IModalContext,
+  IModalContextState,
+} from './IModalContext'
+import ModalWindowContext from './ModalWindowContext'
 
 const initialState: IModalContextState = {
   isModalShow: false,
@@ -9,26 +13,37 @@ const initialState: IModalContextState = {
   deletingRecord: undefined,
 }
 
-const ModalContext = ({
-  children
-}: any) => {
+const ModalContext = ({ children }: any) => {
   const [state, setState] = useState(initialState)
 
   const handleCloseWindow = () => {
-    setTimeout(() => setState({ ...state, isModalShow: false, modalData: undefined, deletingRecord: undefined }), 300)
+    setTimeout(
+      () =>
+        setState({
+          ...state,
+          isModalShow: false,
+          modalData: undefined,
+          deletingRecord: undefined,
+        }),
+      300
+    )
   }
 
   const handleShowModal = (type: string) => {
-    setState({ 
-      ...state, 
-      isModalShow: true, 
-      modalData: Modals[type]
+    setState({
+      ...state,
+      isModalShow: true,
+      modalData: Modals[type],
     })
   }
 
-  const handleShowWarn = (id: string) => {
-    setState({ ...state, isModalShow: true, modalData: Modals.WARN_MODAL, deletingRecord: id })
-    console.log('WARN id', id);
+  const handleShowWarn = (shape: DeletingRecordType) => {
+    setState({
+      ...state,
+      isModalShow: true,
+      modalData: Modals.WARN_MODAL,
+      deletingRecord: shape,
+    })
   }
 
   const contextValue: IModalContext = {
@@ -38,7 +53,11 @@ const ModalContext = ({
     handleShowWarn,
   }
 
-  return <ModalWindowContext.Provider value={contextValue}>{children}</ModalWindowContext.Provider>
+  return (
+    <ModalWindowContext.Provider value={contextValue}>
+      {children}
+    </ModalWindowContext.Provider>
+  )
 }
 
 export default ModalContext

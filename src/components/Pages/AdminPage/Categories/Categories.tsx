@@ -10,7 +10,6 @@ import './styles.scss'
 import Loader from '../../../Loader'
 
 const Categories = () => {
-  
   const { handleShowModal, handleShowWarn } = useModalContext()
 
   const dispatch = useDispatch()
@@ -33,24 +32,15 @@ const Categories = () => {
           <span>Добавить категорию</span>
         </button>
       </div>
-      {
-        loader 
-          ? (
-            <Loader />
-          )
-          : (
-            <div className="categories__list">
-              {
-                categories.map((item: any) => (
-                  <Category key={item.id} id={item.id} img={item.img} name={item.title} handleShowWarn={() => {
-                    handleShowWarn(item.id)
-                  }}/>
-                ))
-              }
-            </div>
-          )
-      }
-     
+      {loader ? (
+        <Loader />
+      ) : (
+        <div className="categories__list">
+          {categories.map((item: any) => (
+            <Category key={item.id} id={item.id} img={item.img} name={item.title} />
+          ))}
+        </div>
+      )}
     </div>
   )
 }

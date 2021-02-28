@@ -1,5 +1,5 @@
 export type Action = {
-  type: string,
+  type: string
   payload?: any
   [type: string]: any
 }

@@ -1,4 +1,5 @@
 export type ProdItemProps = {
+  id: string
   tableView: boolean
   name: string
   price: string
@@ -6,4 +7,5 @@ export type ProdItemProps = {
   desctiption: string
   img: string
   category: string
+  // handleShowWarn: () => void
 }

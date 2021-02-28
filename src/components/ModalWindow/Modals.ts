@@ -1,9 +1,9 @@
-import CategoryAddModal from "./CategoryAddModal";
-import { ModalsType } from "./IModalWindow";
-import ProductAddModal from "./ProductAddModal";
-import WarningModal from "./WarningModal";
+import CategoryAddModal from './CategoryAddModal'
+import { ModalsType } from './IModalWindow'
+import ProductAddModal from './ProductAddModal'
+import WarningModal from './WarningModal'
 
-export const modalTypes: {[type: string]: string} = {
+export const modalTypes: { [type: string]: string } = {
   ADD_PRODUCT_MODAL: 'ADD_PRODUCT_MODAL',
   ADD_CATEGORY_MODAL: 'ADD_CATEGORY_MODAL',
   WARN_MODAL: 'WARN_MODAL',
@@ -17,7 +17,6 @@ export const Modals: ModalsType = {
   ADD_CATEGORY_MODAL: {
     Comp: CategoryAddModal,
     title: 'Добавить категорию',
-    
   },
   UPDATE_CATEGORY_MODAL: {
     Comp: CategoryAddModal,
@@ -28,4 +27,3 @@ export const Modals: ModalsType = {
     title: 'Удаление',
   },
 }
-

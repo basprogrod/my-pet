@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 export default (value: number): boolean => {
   const [scrollValue, setScrollValue] = useState(false)
@@ -16,7 +16,6 @@ export default (value: number): boolean => {
 
     return () => window.removeEventListener('scroll', cb)
   }, [])
-  
+
   return scrollValue
 }
-  

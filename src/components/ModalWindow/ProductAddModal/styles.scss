@@ -1,7 +1,7 @@
 @import '../../../constants/variables.scss';
 
 .product-popup {
-  #image { 
+  #image {
     display: none;
   }
 
@@ -17,7 +17,7 @@
     cursor: pointer;
 
     &:hover {
-      color: $main-white-color
+      color: $main-white-color;
     }
 
     img {

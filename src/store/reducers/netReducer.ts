@@ -1,10 +1,10 @@
-import Categories from "../../components/Pages/AdminPage/Categories";
-import actionTypes from "../actions/actionTypes"
+import Categories from '../../components/Pages/AdminPage/Categories'
+import actionTypes from '../actions/actionTypes'
 
 export type InitStateType = {
   categories: any[]
   products: any[]
-  loader: boolean,
+  loader: boolean
 }
 
 export type NetReducerType = {
@@ -18,24 +18,26 @@ const initState: InitStateType = {
 }
 
 export default (state = initState, action: any) => {
-  const {type, payload} = action
+  const { type, payload } = action
 
   switch (type) {
-    case actionTypes.net.GET_CATEGORIES: 
+    case actionTypes.net.GET_CATEGORIES:
       return {
-        ...state, loader: true,
+        ...state,
+        loader: true,
       }
-    case actionTypes.net.GET_PRODUCTS: 
+    case actionTypes.net.GET_PRODUCTS:
       return {
-        ...state, loader: true,
+        ...state,
+        loader: true,
       }
-    case actionTypes.net.SET_CATEGORIES_TO_STORE: 
+    case actionTypes.net.SET_CATEGORIES_TO_STORE:
       return {
         ...state,
         categories: payload,
         loader: false,
       }
-    case actionTypes.net.SET_PRODUCTS_TO_STORE: 
+    case actionTypes.net.SET_PRODUCTS_TO_STORE:
       return {
         ...state,
         products: payload,

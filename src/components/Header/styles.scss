@@ -23,9 +23,9 @@
     background-color: $main-white-color;
     z-index: 9;
     box-shadow: 0 10px 20px $main-shadow-color;
-    -webkit-transition: all 0.5s cubic-bezier(.66,.23,.46,1.26);
-    -o-transition: all 0.5s cubic-bezier(.66,.23,.46,1.26);
-    transition: all 0.5s cubic-bezier(.66,.23,.46,1.26);
+    -webkit-transition: all 0.5s cubic-bezier(0.66, 0.23, 0.46, 1.26);
+    -o-transition: all 0.5s cubic-bezier(0.66, 0.23, 0.46, 1.26);
+    transition: all 0.5s cubic-bezier(0.66, 0.23, 0.46, 1.26);
   }
 
   .header__bottom.active {
@@ -73,7 +73,7 @@
       font-weight: 700;
       line-height: 15px;
     }
-    
+
     &.bottom {
       height: 50px;
     }
@@ -132,7 +132,7 @@
 
     span::before {
       font-size: 20px;
-      color: $main-dark-color;     
+      color: $main-dark-color;
     }
 
     &::before {
@@ -142,7 +142,7 @@
       height: 16px;
       background-color: $active-color;
       color: $main-white-color;
-      font-family: "Noto Sans";
+      font-family: 'Noto Sans';
       font-size: 12px;
       font-weight: 700;
       line-height: 17px;
@@ -180,7 +180,7 @@
   margin-left: auto;
 }
 
-@media (max-width: 1110px) { 
+@media (max-width: 1110px) {
   .header {
     &__container.container {
       padding-right: 0;

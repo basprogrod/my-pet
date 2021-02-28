@@ -63,6 +63,12 @@
       position: absolute;
       right: 10px;
       top: 10px;
+      background: $black-color;
+
+      &:hover {
+        background: $main-white-color;
+        color: $black-color;
+      }
 
       i {
         margin: unset;
@@ -70,5 +76,4 @@
       }
     }
   }
-  
 }

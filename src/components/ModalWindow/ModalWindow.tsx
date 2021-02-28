@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import useModalContext from '../../hooks/useModalContext'
 import { ModalsData } from './IModalWindow'
+
 import './styles.scss'
 
 const ModalWindow = () => {
   const { handleCloseWindow, modalData } = useModalContext()
   const { Comp, title } = modalData as ModalsData
-  
+
   const [isShow, setIsShow] = useState(false)
 
   useEffect(() => {
@@ -18,17 +19,16 @@ const ModalWindow = () => {
     handleCloseWindow()
   }
 
-
   const handleCloseByOutside = (e: React.MouseEvent) => {
     const el = e.target as HTMLDivElement
-  
+
     if (el.id === 'outside') handleClose()
   }
 
   return (
-    <div 
-      id="outside" 
-      className={`modal-window ${isShow ? 'active' : ''}`} 
+    <div
+      id="outside"
+      className={`modal-window ${isShow ? 'active' : ''}`}
       onClick={handleCloseByOutside}
     >
       <Comp handleClose={handleClose} title={title} />

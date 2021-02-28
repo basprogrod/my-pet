@@ -1,3 +1,3 @@
 export type NavigationProps = {
-  isOpen: boolean,
+  isOpen: boolean
 }

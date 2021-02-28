@@ -10,13 +10,13 @@ import dictionary from '../../constants/dictionary'
 
 const Header = () => {
   const location = useLocation()
-  
+
   const [isOpenNav, setIsOpenNav] = useState(false)
   const [isFixedHeader, setIsFixedHeader] = useState(true)
   const isDisplay: boolean = useScrollToggler(SCROLL_FOR_DISPLAYNG_FIXED_HEADER)
 
   useEffect(() => {
-    setIsFixedHeader(!isFixedHeader)    
+    setIsFixedHeader(!isFixedHeader)
   }, [isDisplay])
 
   const handleOpneCloseNav = () => {
@@ -28,10 +28,18 @@ const Header = () => {
       <div className="header__top">
         <div className="container header__container">
           <div className="row header__row top">
-            <a href="#" className="header__row-title">Название магазина</a>
+            <a href="#" className="header__row-title">
+              Название магазина
+            </a>
             <div className="header__row-wrp">
-              <a href="mail:#" className="header__link"><span className="icon-mail"></span><span>Email</span></a>
-              <a href="tel:#" className="header__link"><span className="icon-phone"></span><span>Phone</span></a>
+              <a href="mail:#" className="header__link">
+                <span className="icon-mail"></span>
+                <span>Email</span>
+              </a>
+              <a href="tel:#" className="header__link">
+                <span className="icon-phone"></span>
+                <span>Phone</span>
+              </a>
             </div>
             <div className="header__row-soc">
               <a href="#" className="icon-vk"></a>
@@ -43,28 +51,29 @@ const Header = () => {
       <div className={`header__bottom ${isFixedHeader ? 'active' : ''}`}>
         <div className="container header__container">
           <div className="row header__row bottom">
-            
             <Link to={router.HOME} className="header__logo site__logo">
               <div className="site__logo-img header__logo-img">
                 <img src={logo} alt="image" />
-                
-                <div className="site__logo-block header__logo-block">
-                  
-                </div>
+
+                <div className="site__logo-block header__logo-block"></div>
               </div>
             </Link>
 
             <div className="header__search">
               <div className="header__search-btn icon-search"></div>
             </div>
-            
-            <div className="mob-btn" onClick={handleOpneCloseNav} >
+
+            <div className="mob-btn" onClick={handleOpneCloseNav}>
               <div className="mob-btn__block">{dictionary.header.MENU}</div>
             </div>
-            
+
             <Navigation isOpen={isOpenNav} />
-            
-            <a href="cart-page.php" className="header__cart active" data-numb="9">
+
+            <a
+              href="cart-page.php"
+              className="header__cart active"
+              data-numb="9"
+            >
               <span className="icon-cart"></span>
             </a>
           </div>

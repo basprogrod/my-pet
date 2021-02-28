@@ -4,8 +4,7 @@ export type Colors = {
   isExist: boolean
 }
 
-export type ColorRowProps =  {
+export type ColorRowProps = {
   colors: Array<Colors>
   selectedColor?: string | number
 }
-

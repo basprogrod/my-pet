@@ -10,5 +10,5 @@ export default {
     ADD_PRODUCT: 'ADD_PRODUCT',
 
     DELETE_A_RECORD: 'DELETE_A_RECORD',
-  }
+  },
 }

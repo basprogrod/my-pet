@@ -1,4 +1,4 @@
-import { Sizes } from "../components/SizesRow/ISizesRow";
+import { Sizes } from '../components/SizesRow/ISizesRow'
 
 export const sizesMock: Array<Sizes> = [
   {
