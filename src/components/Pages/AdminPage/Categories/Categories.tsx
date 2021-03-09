@@ -8,9 +8,11 @@ import useModalContext from '../../../../hooks/useModalContext'
 
 import './styles.scss'
 import Loader from '../../../Loader'
+import { actionsGetCategories } from '../../../../store/actions/netActions'
+import { sorting } from '../../../../constants/constants'
 
 const Categories = () => {
-  const { handleShowModal, handleShowWarn } = useModalContext()
+  const { handleShowModal } = useModalContext()
 
   const dispatch = useDispatch()
   const { categories } = useSelector((state: NetReducerType) => state.netReducer)
@@ -21,7 +23,7 @@ const Categories = () => {
   }
 
   useEffect(() => {
-    dispatch({ type: actionTypes.net.GET_CATEGORIES })
+    dispatch(actionsGetCategories({ sortingField: sorting.DEFAULT, search: '' }))
   }, [])
 
   return (
