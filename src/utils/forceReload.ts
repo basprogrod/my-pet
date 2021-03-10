@@ -1,5 +1,7 @@
+import { defaultQurey } from '../constants/constants'
 import store from '../store'
 import actionTypes from '../store/actions/actionTypes'
+import { actionsGetCategories, actionsGetProducts } from '../store/actions/netActions'
 
 export type ReloadHandlersTypes = {
   category(): void
@@ -7,6 +9,6 @@ export type ReloadHandlersTypes = {
   [type: string]: () => void
 }
 export default ((): ReloadHandlersTypes => ({
-  category: () => store.dispatch({ type: actionTypes.net.GET_CATEGORIES }),
-  product: () => store.dispatch({ type: actionTypes.net.GET_PRODUCTS }),
+  category: () => store.dispatch(actionsGetCategories()),
+  product: () => store.dispatch(actionsGetProducts(defaultQurey)),
 }))()

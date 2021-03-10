@@ -16,6 +16,8 @@ const Select = ({ value, options = selectConfig, onSelect }: SelectProps) => {
     const el = e.target as HTMLLIElement
 
     setItem(el.dataset.name || '')
+    onSelect(el.dataset.sortKey || sorting.DEFAULT)
+    console.log('-> el.dataset.sortKey', el.dataset.sortKey)
 
     handleOpenDropdown()
   }
@@ -31,7 +33,7 @@ const Select = ({ value, options = selectConfig, onSelect }: SelectProps) => {
           <li
             key={el.name}
             data-name={el.name}
-            data-sortKey={el.sortKey}
+            data-sort-key={el.sortKey}
             className="selctet_item"
             onClick={hendleClick}
           >

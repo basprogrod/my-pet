@@ -9,6 +9,8 @@ import { NetReducerType } from '../../../../store/reducers/netReducer'
 import actionTypes from '../../../../store/actions/actionTypes'
 import Loader from '../../../Loader'
 import { ProdItemProps } from '../ProdItem/IProdItem'
+import { actionsGetProducts } from '../../../../store/actions/netActions'
+import { defaultQurey, sorting } from '../../../../constants/constants'
 
 const Propducts = () => {
   const { handleShowModal, handleShowWarn } = useModalContext()
@@ -26,8 +28,12 @@ const Propducts = () => {
     setTableView(!tableView)
   }
 
+  const handleSort = (field: string) => {
+    dispatch(actionsGetProducts({ sortingField: field }))
+  }
+
   useEffect(() => {
-    dispatch({ type: actionTypes.net.GET_PRODUCTS })
+    dispatch(actionsGetProducts(defaultQurey))
   }, [])
 
   return (
@@ -40,7 +46,7 @@ const Propducts = () => {
         <button className="products__tools-btn" onClick={handleSetTableView}>
           Вид
         </button>
-        <Select />
+        <Select onSelect={handleSort} />
       </div>
       {loader ? (
         <Loader />
@@ -55,7 +61,7 @@ const Propducts = () => {
               category={item.category}
               price={item.price}
               name={item.name}
-              desctiption={item.desctiption}
+              description={item.description}
               img={item.img}
             />
           ))}

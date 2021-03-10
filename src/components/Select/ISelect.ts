@@ -1,7 +1,7 @@
 export type SelectProps = {
   value?: number | string
   options?: any[]
-  onSelect?: Function
+  onSelect: (field: string) => void
   [type: string]: any
 }
 

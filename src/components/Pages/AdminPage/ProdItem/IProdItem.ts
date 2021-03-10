@@ -4,7 +4,7 @@ export type ProdItemProps = {
   name: string
   price: string
   brand: string
-  desctiption: string
+  description: string
   img: string
   category: string
   // handleShowWarn: () => void

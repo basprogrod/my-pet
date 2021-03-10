@@ -38,11 +38,6 @@
     opacity: 0.9;
   }
 
-  &.table-view {
-    height: 100px;
-    width: 100%;
-  }
-
   &__bg {
     position: absolute;
     left: 0;
@@ -81,14 +76,37 @@
   &.table-view {
     height: 100px;
     width: 100%;
-    background-color: $gray-color;
+    background-color: $main-dark-color;
     align-items: center;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+
+    &::before {
+      display: none;
+    }
 
     .product-item {
       &__bg {
         position: static;
         height: 100px;
         width: 100px;
+      }
+
+      &__title {
+        margin: 0;
+      }
+
+      &__footer {
+        margin-top: 0;
+        height: 100%;
+        align-items: flex-start;
+      }
+
+      &__descr {
+        font-size: 12px;
+        padding-left: 15px;
+        padding-right: 15px;
       }
 
       &__btns {

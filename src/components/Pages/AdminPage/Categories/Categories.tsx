@@ -23,7 +23,7 @@ const Categories = () => {
   }
 
   useEffect(() => {
-    dispatch(actionsGetCategories({ sortingField: sorting.DEFAULT, search: '' }))
+    dispatch(actionsGetCategories())
   }, [])
 
   return (

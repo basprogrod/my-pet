@@ -1,14 +1,16 @@
 export type Action = {
   type: string
   payload?: any
-  [type: string]: any
 }
 
-// export type SearchParams = {s
-//   field: string
-// }
+export type ActionWithPayload<T> = {
+  type: string
+  payload: T
+}
 
-export type GetCategoriesPayload = {
+export type GetProductsPayload = {
   sortingField: string
-  search: string
+  search?: string
 }
+
+export type ActionTypes<T> = Action | ActionWithPayload<T>
