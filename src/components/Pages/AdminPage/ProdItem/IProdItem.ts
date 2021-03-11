@@ -1,11 +1,13 @@
-export type ProdItemProps = {
+export interface IProductItem {
   id: string
-  tableView: boolean
   name: string
   price: string
   brand: string
   description: string
   img: string
   category: string
-  // handleShowWarn: () => void
+}
+
+export interface IProdItemProps extends IProductItem {
+  tableView: boolean
 }

@@ -1,16 +1,13 @@
 import { useState } from 'react'
 import { Modals } from '../../components/ModalWindow/Modals'
-import {
-  DeletingRecordType,
-  IModalContext,
-  IModalContextState,
-} from './IModalContext'
+import { DeletingRecordType, IModalContext, IModalContextState } from './IModalContext'
 import ModalWindowContext from './ModalWindowContext'
 
 const initialState: IModalContextState = {
   isModalShow: false,
   modalData: undefined,
   deletingRecord: undefined,
+  editProductModalId: undefined,
 }
 
 const ModalContext = ({ children }: any) => {
@@ -18,22 +15,25 @@ const ModalContext = ({ children }: any) => {
 
   const handleCloseWindow = () => {
     setTimeout(
+      // для плавного загрытия модалок
       () =>
         setState({
           ...state,
           isModalShow: false,
           modalData: undefined,
           deletingRecord: undefined,
+          editProductModalId: undefined,
         }),
       300
     )
   }
 
-  const handleShowModal = (type: string) => {
+  const handleShowModal = (type: string, editProductModalId?: string) => {
     setState({
       ...state,
       isModalShow: true,
       modalData: Modals[type],
+      editProductModalId,
     })
   }
 
@@ -53,11 +53,7 @@ const ModalContext = ({ children }: any) => {
     handleShowWarn,
   }
 
-  return (
-    <ModalWindowContext.Provider value={contextValue}>
-      {children}
-    </ModalWindowContext.Provider>
-  )
+  return <ModalWindowContext.Provider value={contextValue}>{children}</ModalWindowContext.Provider>
 }
 
 export default ModalContext

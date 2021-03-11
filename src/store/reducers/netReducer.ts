@@ -1,5 +1,6 @@
 import Categories from '../../components/Pages/AdminPage/Categories'
 import actionTypes from '../actions/actionTypes'
+import { ActionTypes } from '../actions/IActions'
 
 export type InitStateType = {
   categories: any[]
@@ -17,7 +18,7 @@ const initState: InitStateType = {
   loader: false,
 }
 
-export default (state = initState, action: any) => {
+export default (state = initState, action: ActionTypes<any>) => {
   const { type, payload } = action
 
   switch (type) {

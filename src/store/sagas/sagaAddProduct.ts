@@ -5,8 +5,9 @@ import actionTypes from '../actions/actionTypes'
 
 import stor from '../'
 import forceReload from '../../utils/forceReload'
+import { ActionWithPayload } from '../actions/IActions'
 
-export default function* ({ payload }: any) {
+export default function* ({ payload }: ActionWithPayload<HTMLFormElement>) {
   try {
     const fd = new FormData(payload)
 

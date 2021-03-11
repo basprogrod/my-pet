@@ -8,7 +8,7 @@ import './styles.scss'
 import { NetReducerType } from '../../../../store/reducers/netReducer'
 import actionTypes from '../../../../store/actions/actionTypes'
 import Loader from '../../../Loader'
-import { ProdItemProps } from '../ProdItem/IProdItem'
+import { IProdItemProps } from '../ProdItem/IProdItem'
 import { actionsGetProducts } from '../../../../store/actions/netActions'
 import { defaultQurey, sorting } from '../../../../constants/constants'
 

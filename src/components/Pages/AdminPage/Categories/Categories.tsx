@@ -2,14 +2,12 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { modalTypes } from '../../../ModalWindow/Modals'
 import Category from '../Category'
-import actionTypes from '../../../../store/actions/actionTypes'
 import { NetReducerType } from '../../../../store/reducers/netReducer'
 import useModalContext from '../../../../hooks/useModalContext'
 
 import './styles.scss'
 import Loader from '../../../Loader'
 import { actionsGetCategories } from '../../../../store/actions/netActions'
-import { sorting } from '../../../../constants/constants'
 
 const Categories = () => {
   const { handleShowModal } = useModalContext()
@@ -30,7 +28,7 @@ const Categories = () => {
     <div className="categories">
       <div className="categories__tools">
         <button className="categories__tools-btn" onClick={handleOpenModal}>
-          <i className="icns-plus"></i>
+          <i className="icns-plus" />
           <span>Добавить категорию</span>
         </button>
       </div>

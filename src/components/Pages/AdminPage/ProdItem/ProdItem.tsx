@@ -2,15 +2,15 @@ import React, { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import useModalContext from '../../../../hooks/useModalContext'
 import { modalTypes } from '../../../ModalWindow/Modals'
-import { ProdItemProps } from './IProdItem'
+import { IProdItemProps } from './IProdItem'
 
 import './styles.scss'
 
-const ProdItem = ({ id, tableView, name, price, brand, description, img, category }: ProdItemProps) => {
+const ProdItem = ({ id, tableView, name, price, brand, description, img, category }: IProdItemProps) => {
   const { handleShowWarn, handleShowModal } = useModalContext()
 
   const handleDelete = useCallback(() => handleShowWarn({ id, type: 'product' }), [id])
-  const handleEdit = useCallback(() => handleShowModal(modalTypes.EDIT_PRODUCT_MODAL), [id])
+  const handleEdit = useCallback(() => handleShowModal(modalTypes.EDIT_PRODUCT_MODAL, id), [id])
 
   return (
     <div className={`product-item ${tableView ? 'table-view' : ''}`}>

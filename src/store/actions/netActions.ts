@@ -1,5 +1,5 @@
 import actionTypes from './actionTypes'
-import { Action, ActionTypes, GetProductsPayload } from './IActions'
+import { Action, ActionTypes, GetProductsPayload, UpdateProductsPayload } from './IActions'
 
 const { net } = actionTypes
 
@@ -19,5 +19,15 @@ export const actionsGetCategories = (): ActionTypes<any> => ({
 
 export const actionsGetProducts = (payload: GetProductsPayload): ActionTypes<GetProductsPayload> => ({
   type: actionTypes.net.GET_PRODUCTS,
+  payload,
+})
+
+export const actionsAddProducts = (payload: HTMLFormElement): ActionTypes<HTMLFormElement> => ({
+  type: actionTypes.net.ADD_PRODUCT,
+  payload,
+})
+
+export const actionsUpdateProduct = (payload: UpdateProductsPayload): ActionTypes<UpdateProductsPayload> => ({
+  type: actionTypes.net.UPDATE_PRODUCT,
   payload,
 })

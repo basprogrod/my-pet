@@ -13,4 +13,9 @@ export type GetProductsPayload = {
   search?: string
 }
 
+export type UpdateProductsPayload = {
+  id: string
+  form: HTMLFormElement
+}
+
 export type ActionTypes<T> = Action | ActionWithPayload<T>

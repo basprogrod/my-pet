@@ -2,10 +2,10 @@ import axios from 'axios'
 import { Saga, SagaIterator } from 'redux-saga'
 import { call, put, delay } from 'redux-saga/effects'
 import { SERVER_URL } from '../../constants/constants'
-import { Action, ActionTypes, GetProductsPayload } from '../actions/IActions'
+import { ActionWithPayload, GetProductsPayload } from '../actions/IActions'
 import { actionsSetProductsToStor } from '../actions/netActions'
 
-export default function* ({ payload }: ActionTypes<GetProductsPayload>): SagaIterator {
+export default function* ({ payload }: ActionWithPayload<GetProductsPayload>): SagaIterator {
   if (!payload) return
 
   const { search, sortingField } = payload

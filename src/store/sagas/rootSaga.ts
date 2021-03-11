@@ -5,6 +5,7 @@ import sagaAddProduct from './sagaAddProduct'
 import sagaGetProducts from './sagaGetProducts'
 import sagaGetCategories from './sagaGetTCategories'
 import sagaRecordDelete from './sagaRecordDelete'
+import sagaUpdateProduct from './sagaUpdateProduct'
 
 // function* testSaga() {
 
@@ -20,5 +21,6 @@ export default function* () {
   yield takeEvery(actionTypes.net.DELETE_A_RECORD, sagaRecordDelete)
   yield takeEvery(actionTypes.net.ADD_PRODUCT, sagaAddProduct)
   yield takeEvery(actionTypes.net.GET_PRODUCTS, sagaGetProducts)
+  yield takeEvery(actionTypes.net.UPDATE_PRODUCT, sagaUpdateProduct)
   // yield call(testSaga)
 }
