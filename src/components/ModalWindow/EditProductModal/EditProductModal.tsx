@@ -2,9 +2,10 @@ import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import useModalContext from '../../../hooks/useModalContext'
 import useSetImage from '../../../hooks/useSetImage'
-import { actionsAddProducts, actionsUpdateProduct } from '../../../store/actions/netActions'
+import { actionsUpdateProduct } from '../../../store/actions/netActions'
 import { NetReducerType } from '../../../store/reducers/netReducer'
-import { IProductItem } from '../../Pages/AdminPage/ProdItem/IProdItem'
+import { IProductItem } from '../../ProdItem/IProdItem'
+
 import { EditProductModalProps, IEditModalState } from './IEditProductModal'
 
 const initialState: IEditModalState = {
@@ -20,16 +21,18 @@ const initialState: IEditModalState = {
 const EditProductModal = ({ handleClose, title }: EditProductModalProps) => {
   const [state, setState] = useState(initialState)
 
+  const { img, handleSetImg } = useSetImage(state.img)
+  const { editProductModalId } = useModalContext()
+
+  const { products } = useSelector((state: NetReducerType) => state.netReducer)
+
+  const dispatch = useDispatch()
+
+  const prodItem: IProductItem | undefined = products.find((item: IProductItem) => item.id === editProductModalId)
+
   useEffect(() => {
     setState({ ...state, ...prodItem })
   }, [])
-
-  const { img, handleSetImg } = useSetImage(state.img)
-  const { editProductModalId } = useModalContext()
-  const { products } = useSelector((state: NetReducerType) => state.netReducer)
-  const dispatch = useDispatch()
-
-  const prodItem: IProductItem = products.find((item: IProductItem) => item.id === editProductModalId)
 
   const handleChange = (e: ChangeEvent) => {
     const input = e.target as HTMLInputElement
@@ -116,9 +119,6 @@ const EditProductModal = ({ handleClose, title }: EditProductModalProps) => {
         <button type="submit">Отправить</button>
       </div>
     </form>
-    // <div>
-    //   {title} EditProductModal {editProductModalId}
-    // </div>
   )
 }
 

@@ -1,10 +1,10 @@
-import Categories from '../../components/Pages/AdminPage/Categories'
+import { IProductItem } from '../../components/ProdItem/IProdItem'
 import actionTypes from '../actions/actionTypes'
-import { ActionTypes } from '../actions/IActions'
+import { ActionTypes, CategoryType } from '../actions/IActions'
 
 export type InitStateType = {
-  categories: any[]
-  products: any[]
+  categories: CategoryType[]
+  products: IProductItem[]
   loader: boolean
 }
 
@@ -13,14 +13,7 @@ export type NetReducerType = {
 }
 
 const initState: InitStateType = {
-  categories: [
-    { title: 'KEk', id: 'qwertyhbvc', img: '', created: new Date() },
-    { title: 'KEk', id: 'qwertyhbvc', img: '', created: new Date() },
-    { title: 'KEk', id: 'qwertyhbvc', img: '', created: new Date() },
-    { title: 'KEk', id: 'qwertyhbvc', img: '', created: new Date() },
-    { title: 'KEk', id: 'qwertyhbvc', img: '', created: new Date() },
-    { title: 'KEk', id: 'qwertyhbvc', img: '', created: new Date() },
-  ],
+  categories: [],
   products: [],
   loader: false,
 }

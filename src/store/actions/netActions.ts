@@ -1,24 +1,30 @@
+import { IProductItem } from '../../components/ProdItem/IProdItem'
 import actionTypes from './actionTypes'
-import { Action, ActionTypes, GetProductsPayload, UpdateProductsPayload } from './IActions'
+import { Action, ActionTypes, CategoryType, GetProductsPayload, UpdateProductsPayload } from './IActions'
 
 const { net } = actionTypes
 
-export const actionsSetCategoriesToStor = (payload: any): ActionTypes<any> => ({
+export const actionsSetCategoriesToStor = (payload: CategoryType[]): ActionTypes<CategoryType[]> => ({
   type: net.SET_CATEGORIES_TO_STORE,
   payload,
 })
 
-export const actionsSetProductsToStor = (payload: any): ActionTypes<any> => ({
+export const actionsSetProductsToStor = (payload: IProductItem[]): ActionTypes<IProductItem[]> => ({
   type: net.SET_PRODUCTS_TO_STORE,
   payload,
 })
 
-export const actionsGetCategories = (): ActionTypes<any> => ({
+export const actionsGetCategories = (): ActionTypes<never> => ({
   type: actionTypes.net.GET_CATEGORIES,
 })
 
 export const actionsGetProducts = (payload: GetProductsPayload): ActionTypes<GetProductsPayload> => ({
   type: actionTypes.net.GET_PRODUCTS,
+  payload,
+})
+
+export const actionsAddCategory = (payload: FormData): ActionTypes<FormData> => ({
+  type: actionTypes.net.ADD_CATEGORY,
   payload,
 })
 

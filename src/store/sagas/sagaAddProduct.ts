@@ -5,9 +5,9 @@ import actionTypes from '../actions/actionTypes'
 
 import stor from '../'
 import forceReload from '../../utils/forceReload'
-import { ActionWithPayload } from '../actions/IActions'
+import { ActionTypes, ActionWithPayload } from '../actions/IActions'
 
-export default function* ({ payload }: ActionWithPayload<FormData>) {
+export default function* ({ payload }: ActionTypes<FormData>) {
   try {
     yield call(axios.post, `${SERVER_URL}/addProduct`, payload)
 

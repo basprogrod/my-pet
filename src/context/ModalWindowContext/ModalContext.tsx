@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FC, JSXElementConstructor, ReactElement, ReactNode, useState } from 'react'
 import { Modals } from '../../components/ModalWindow/Modals'
 import { DeletingRecordType, IModalContext, IModalContextState } from './IModalContext'
 import ModalWindowContext from './ModalWindowContext'
@@ -10,7 +10,7 @@ const initialState: IModalContextState = {
   editProductModalId: undefined,
 }
 
-const ModalContext = ({ children }: any) => {
+const ModalContext: FC<{ children: ReactNode }> = ({ children }) => {
   const [state, setState] = useState(initialState)
 
   const handleCloseWindow = () => {

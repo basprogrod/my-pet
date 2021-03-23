@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import useSetImage from '../../../hooks/useSetImage'
 import { actionsAddProducts } from '../../../store/actions/netActions'
@@ -13,7 +13,7 @@ import './styles.scss'
 const ProductAddModal = ({ handleClose, title }: ProductAddModalProps) => {
   const { img, handleSetImg } = useSetImage()
 
-  const [state, setState]: any = useState('')
+  const [state, setState]: [string, Dispatch<SetStateAction<string>>] = useState('')
 
   const { categories } = useSelector((state: NetReducerType) => state.netReducer)
 
@@ -21,10 +21,7 @@ const ProductAddModal = ({ handleClose, title }: ProductAddModalProps) => {
 
   const dispatch = useDispatch()
 
-  const handleSelect = (e: SelectEventType) => {
-    console.log(e)
-    setState(e.field)
-  }
+  const handleSelect = (e: SelectEventType) => setState(e.field)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()

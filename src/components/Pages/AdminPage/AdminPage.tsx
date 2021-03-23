@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import router from '../../../constants/router'
 import useModalContext from '../../../hooks/useModalContext'
+import Main from '../../Main'
 import Window from '../../Window'
-import Main from './Main'
 
 import './styles.scss'
 

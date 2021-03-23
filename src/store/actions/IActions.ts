@@ -18,4 +18,10 @@ export type UpdateProductsPayload = {
   form: HTMLFormElement
 }
 
+export type CategoryType = {
+  id: string
+  title: string
+  img: string
+}
+
 export type ActionTypes<T> = Action | ActionWithPayload<T>

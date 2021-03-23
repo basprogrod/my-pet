@@ -1,0 +1,28 @@
+@import '../../constants/variables.scss';
+
+.products {
+  position: relative;
+  padding-top: 46px;
+  height: 100%;
+  box-shadow: 0 -3px 10px #0005;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__tools {
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: $main-dark-color;
+
+    &-btn {
+      @include button;
+      margin-right: 8px;
+    }
+  }
+}

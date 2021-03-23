@@ -1,5 +1,5 @@
-import { createStore, applyMiddleware } from 'redux'
-import createSagaMiddleware from 'redux-saga'
+import Redux, { createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware, { SagaMiddleware } from 'redux-saga'
 import { createLogger } from 'redux-logger'
 import rootReducer from './reducers'
 import rootSaga from './sagas/rootSaga'
@@ -9,7 +9,7 @@ const logger = createLogger({
   collapsed: true,
 })
 
-const middlewares: any = [sagaMW, logger]
+const middlewares: [SagaMiddleware, Redux.Middleware] = [sagaMW, logger]
 
 const store = createStore(rootReducer, applyMiddleware(...middlewares))
 
