@@ -11,10 +11,10 @@ export const sorting: { [type: string]: string } = {
 }
 
 export const selectConfig: SelectConfigItemType[] = [
-  { name: 'Цена', sortKey: sorting.PRICE },
-  { name: 'Дата', sortKey: sorting.DATA },
-  { name: 'Название', sortKey: sorting.NAME },
-  { name: 'По умолчанию', sortKey: sorting.DEFAULT },
+  { name: 'Цена', key: sorting.PRICE },
+  { name: 'Дата', key: sorting.DATA },
+  { name: 'Название', key: sorting.NAME },
+  { name: 'По умолчанию', key: sorting.DEFAULT },
 ]
 
 export const defaultQurey = { sortingField: sorting.DEFAULT }

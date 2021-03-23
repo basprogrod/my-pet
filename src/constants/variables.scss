@@ -1,5 +1,6 @@
 $active-color: #c81919;
 $passive-color: #7d7d7d;
+$light-color: #e8e8e8;
 $main-dark-color: #323232;
 $main-white-color: #fff;
 
@@ -44,5 +45,5 @@ $main-shadow-color: rgba(0, 0, 0, 0.15);
 }
 
 @mixin shadow {
-  box-shadow: 0 0 15px #0009;
+  box-shadow: 0 5px 6px #0002;
 }

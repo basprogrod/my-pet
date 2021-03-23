@@ -4,17 +4,17 @@ import { modalTypes } from '../../../ModalWindow/Modals'
 import Category from '../Category'
 import { NetReducerType } from '../../../../store/reducers/netReducer'
 import useModalContext from '../../../../hooks/useModalContext'
-
-import './styles.scss'
 import Loader from '../../../Loader'
 import { actionsGetCategories } from '../../../../store/actions/netActions'
+
+import './styles.scss'
 
 const Categories = () => {
   const { handleShowModal } = useModalContext()
 
+  const { categories, loader } = useSelector((state: NetReducerType) => state.netReducer)
+
   const dispatch = useDispatch()
-  const { categories } = useSelector((state: NetReducerType) => state.netReducer)
-  const { loader } = useSelector((state: NetReducerType) => state.netReducer)
 
   const handleOpenModal = () => {
     handleShowModal(modalTypes.ADD_CATEGORY_MODAL)

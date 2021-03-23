@@ -4,18 +4,20 @@ import useModalContext from '../../../../hooks/useModalContext'
 import Select from '../../../Select'
 import ProdItem from '../ProdItem'
 import { modalTypes } from '../../../ModalWindow/Modals'
-import './styles.scss'
 import { NetReducerType } from '../../../../store/reducers/netReducer'
-import actionTypes from '../../../../store/actions/actionTypes'
 import Loader from '../../../Loader'
-import { IProdItemProps } from '../ProdItem/IProdItem'
 import { actionsGetProducts } from '../../../../store/actions/netActions'
-import { defaultQurey, sorting } from '../../../../constants/constants'
+import { defaultQurey } from '../../../../constants/constants'
+
+import './styles.scss'
+import Button from '../../../Button'
+import { SelectEventType } from '../../../Select/ISelect'
 
 const Propducts = () => {
-  const { handleShowModal, handleShowWarn } = useModalContext()
+  const { handleShowModal } = useModalContext()
 
   const { products, loader } = useSelector((state: NetReducerType) => state.netReducer)
+
   const dispatch = useDispatch()
 
   const openProducAddModal = () => {
@@ -28,8 +30,8 @@ const Propducts = () => {
     setTableView(!tableView)
   }
 
-  const handleSort = (field: string) => {
-    dispatch(actionsGetProducts({ sortingField: field }))
+  const handleSort = (e: SelectEventType) => {
+    dispatch(actionsGetProducts({ sortingField: e.field }))
   }
 
   useEffect(() => {
@@ -39,14 +41,9 @@ const Propducts = () => {
   return (
     <div className="products">
       <div className="products__tools">
-        <button className="products__tools-btn" onClick={openProducAddModal}>
-          <i className="icns-plus"></i>
-          <span>Добавить продукт</span>
-        </button>
-        <button className="products__tools-btn" onClick={handleSetTableView}>
-          Вид
-        </button>
-        <Select onSelect={handleSort} />
+        <Button text="Добавить продукт" onClick={openProducAddModal} icon="icns-plus" />
+        <Button text="Вид" onClick={handleSetTableView} />
+        <Select onSelect={handleSort} icon="icns-sort-amount-asc" />
       </div>
       {loader ? (
         <Loader />

@@ -7,14 +7,6 @@ import sagaGetCategories from './sagaGetTCategories'
 import sagaRecordDelete from './sagaRecordDelete'
 import sagaUpdateProduct from './sagaUpdateProduct'
 
-// function* testSaga() {
-
-//   while (1) {
-//     const val = yield take('*')
-//     console.log(val);
-//   }
-// }
-
 export default function* () {
   yield takeEvery(actionTypes.net.GET_CATEGORIES, sagaGetCategories)
   yield takeEvery(actionTypes.net.ADD_CATEGORY, sagaAddCategory)

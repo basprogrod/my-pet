@@ -22,7 +22,7 @@ export const actionsGetProducts = (payload: GetProductsPayload): ActionTypes<Get
   payload,
 })
 
-export const actionsAddProducts = (payload: HTMLFormElement): ActionTypes<HTMLFormElement> => ({
+export const actionsAddProducts = (payload: FormData): ActionTypes<FormData> => ({
   type: actionTypes.net.ADD_PRODUCT,
   payload,
 })

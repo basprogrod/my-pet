@@ -13,7 +13,14 @@ export type NetReducerType = {
 }
 
 const initState: InitStateType = {
-  categories: [],
+  categories: [
+    { title: 'KEk', id: 'qwertyhbvc', img: '', created: new Date() },
+    { title: 'KEk', id: 'qwertyhbvc', img: '', created: new Date() },
+    { title: 'KEk', id: 'qwertyhbvc', img: '', created: new Date() },
+    { title: 'KEk', id: 'qwertyhbvc', img: '', created: new Date() },
+    { title: 'KEk', id: 'qwertyhbvc', img: '', created: new Date() },
+    { title: 'KEk', id: 'qwertyhbvc', img: '', created: new Date() },
+  ],
   products: [],
   loader: false,
 }

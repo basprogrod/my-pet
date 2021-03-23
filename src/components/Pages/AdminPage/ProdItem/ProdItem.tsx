@@ -16,17 +16,22 @@ const ProdItem = ({ id, tableView, name, price, brand, description, img, categor
     <div className={`product-item ${tableView ? 'table-view' : ''}`}>
       <img src={img} alt="" className="product-item__bg" />
       {tableView || <div className="product-item__title">{name}</div>}
+
       <div className="product-item__footer">
         <div className="product-item__info">
           {tableView && <div className="product-item__title">{name}</div>}
+
           <div className="product-item__price">${price}</div>
           <div className="product-item__name">{brand}</div>
         </div>
+
         {tableView && <div className="product-item__descr">{description}</div>}
+
         <div className="product-item__btns">
           <button className="product-item__btn">
             <i className="icns-bin" onClick={handleDelete} />
           </button>
+
           <button className="product-item__btn" onClick={handleEdit}>
             <i className="icns-pencil" />
           </button>

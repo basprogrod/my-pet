@@ -1,18 +1,66 @@
 @import '../../../constants/variables.scss';
 
+.admin {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .admin-header {
-  background-color: $passive-color;
+  position: relative;
+  background-color: $light-color;
+  display: flex;
+  align-items: center;
   width: 100%;
-  padding: 15px 25px;
+  height: 50px;
 
   &__link {
-    color: $main-white-color;
+    display: flex;
+    align-items: center;
+    color: $main-dark-color;
+    height: 100%;
     font-weight: 700;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: auto;
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 }
 
 .admin-main {
   display: flex;
   flex-direction: row;
-  // flex-wrap: nowrap;
+  height: 100%;
+}
+
+.navigation {
+  margin-left: 10px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    background-color: $main-white-color;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    height: 55%;
+    margin-top: auto;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: $main-dark-color;
+
+    &:hover,
+    &.active {
+      background-color: $main-dark-color;
+      color: $main-white-color;
+      box-shadow: 0 -7px 7px #0002;
+      z-index: 1000;
+    }
+  }
 }

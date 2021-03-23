@@ -46,23 +46,19 @@ const ProductForm = ({
 
       <ColorRow colors={colors} />
       <SizesRow sizes={sizes} />
-      <Quantiti
-        quantity={1}
-        onSelect={handleSelectQuantity}
-        onChange={handleChangeQuantity}
-      />
+      <Quantiti quantity={1} onSelect={handleSelectQuantity} onChange={handleChangeQuantity} />
 
       <div className="product-card__button-set">
-        <Button
+        {/* <Button
           onClick={handleButtonCartClick}
-          icon={<CartIcon />}
+          // icon={<CartIcon />}
           text="в конрзину"
         />
         <Button
           onClick={handleButtonAskClick}
-          type="black"
+          // type="black"
           text="задать вопрос"
-        />
+        /> */}
       </div>
     </>
   )

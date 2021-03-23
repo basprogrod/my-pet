@@ -1,8 +1,8 @@
-export type ButtonTypes = 'balck' | 'circle'
+export type ButtonTypes = 'balck' | 'circle' | 'default'
 
 export type ButtonProps = {
   text?: string
-  type?: 'ButtonTypes' | string
-  icon?: any
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
+  type?: ButtonTypes
+  icon?: string
+  onClick: (e: React.MouseEvent) => void
 }

@@ -7,11 +7,9 @@ import stor from '../'
 import forceReload from '../../utils/forceReload'
 import { ActionWithPayload } from '../actions/IActions'
 
-export default function* ({ payload }: ActionWithPayload<HTMLFormElement>) {
+export default function* ({ payload }: ActionWithPayload<FormData>) {
   try {
-    const fd = new FormData(payload)
-
-    yield call(axios.post, `${SERVER_URL}/addProduct`, fd)
+    yield call(axios.post, `${SERVER_URL}/addProduct`, payload)
 
     forceReload.product()
   } catch (error) {
